@@ -13,7 +13,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MITFC.Eth.CommandTool
+namespace MITFC.Eth.Wallet
 {
     public static class ClsNethereum
     {

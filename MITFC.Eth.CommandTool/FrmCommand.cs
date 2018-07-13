@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.CommandTool
+namespace MITFC.Eth.Wallet
 {
     public partial class FrmCommand : Form
     {

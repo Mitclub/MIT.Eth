@@ -1,4 +1,4 @@
-﻿namespace MITFC.Eth.CommandTool
+﻿namespace MITFC.Eth.Wallet
 {
     partial class FrmCommand
     {

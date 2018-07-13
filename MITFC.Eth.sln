@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.CommandTool", "MITFC.Eth.CommandTool\MITFC.Eth.CommandTool.csproj", "{EE5E8296-6342-4CC9-A586-A05D38AE9B89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Wallet", "MITFC.Eth.CommandTool\MITFC.Eth.Wallet.csproj", "{EE5E8296-6342-4CC9-A586-A05D38AE9B89}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Common", "MITFC.Eth.Common\MITFC.Eth.Common.csproj", "{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}"
 EndProject
