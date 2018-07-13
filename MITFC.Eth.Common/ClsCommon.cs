@@ -58,7 +58,7 @@ namespace MITFC.Eth.Common
                 {
                     if (string.IsNullOrWhiteSpace(strIP4Address))
                     {
-                        getIp3();
+                        getIp1();
 
                     }
 
@@ -109,36 +109,7 @@ namespace MITFC.Eth.Common
                 return strIP4Address;
             }
 
-            private static string getIp3()
-            {
-                ProcessStartInfo pro = new System.Diagnostics.ProcessStartInfo("cmd.exe");
-                pro.UseShellExecute = false;
-                pro.RedirectStandardOutput = true;
-                pro.RedirectStandardError = true;
-                pro.CreateNoWindow = true;
-                pro.FileName = Application.StartupPath + "\\getIP.bat";
-                //pro.Arguments = fileName;
-                //pro.WorkingDirectory = System.Environment.CurrentDirectory;
-                System.Diagnostics.Process proc = System.Diagnostics.Process.Start(pro);
-                System.IO.StreamReader sOut = proc.StandardOutput;
-                proc.Close();
-                string results = sOut.ReadToEnd().Trim(); //回显内容
-                sOut.Close();
-                string[] values = results.Split(new String[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-                strIP4Address = values[values.Length - 1].Trim();
-
-                return strIP4Address;
-            }
-
         }
-
-        //public static class Paths
-        //{
-        //    public static readonly string M_Geth = Application.StartupPath + "\\Geth";
-        //    public static readonly string M_DXCC = Application.StartupPath + "\\Geth\\DXCC";
-        //    public static readonly string M_Keystore = Application.StartupPath + "\\Geth\\DXCC\\keystore";
-
-        //}
 
         /// <summary>
         /// Mail window pop

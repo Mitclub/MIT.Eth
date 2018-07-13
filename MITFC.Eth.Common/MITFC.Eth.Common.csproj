@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="ClsCommon.cs" />
     <Compile Include="ClsRequestApi.cs" />
-    <Compile Include="ClsUserActionTrack.cs" />
     <Compile Include="Consts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

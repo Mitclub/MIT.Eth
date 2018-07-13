@@ -31,7 +31,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCommand = new System.Windows.Forms.Button();
             this.txtCommand = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -69,19 +68,6 @@
             this.txtCommand.Text = "eth.accounts";
             this.txtCommand.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCommand_KeyDown);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.ForeColor = System.Drawing.Color.Orange;
-            this.button1.Location = new System.Drawing.Point(675, 529);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "voting";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmCommand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -89,7 +75,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
             this.ClientSize = new System.Drawing.Size(762, 564);
             this.Controls.Add(this.txtCommand);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCommand);
             this.Controls.Add(this.textBox1);
             this.MinimumSize = new System.Drawing.Size(600, 600);
@@ -106,7 +91,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnCommand;
         private System.Windows.Forms.TextBox txtCommand;
-        private System.Windows.Forms.Button button1;
     }
 }
 

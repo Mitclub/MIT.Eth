@@ -28,9 +28,7 @@ namespace MITFC.Eth.Common
             request.Accept = "application/json";
             Stream reqstream = request.GetRequestStream();
             reqstream.Write(bytes, 0, bytes.Length);
-
-            //声明一个HttpWebRequest请求
-            //设置连接超时时间
+            
             //request.Timeout = 90000;
             request.Headers.Set("Pragma", "no-cache");
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
