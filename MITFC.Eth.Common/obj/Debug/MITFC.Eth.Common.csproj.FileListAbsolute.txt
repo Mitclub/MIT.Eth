@@ -9,13 +9,3 @@ D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Co
 D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.csproj.CoreCompileInputs.cache
 D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.dll
 D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.pdb
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\MITFC.Eth.Common.dll
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\MITFC.Eth.Common.pdb
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\MITFC.Eth.Model.dll
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\Newtonsoft.Json.dll
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\MITFC.Eth.Model.pdb
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\bin\Debug\Newtonsoft.Json.xml
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.csprojResolveAssemblyReference.cache
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.csproj.CoreCompileInputs.cache
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.dll
-D:\GitHub\Mitclub\MITFC.Eth\MITFC.Eth.Common\obj\Debug\MITFC.Eth.Common.pdb
