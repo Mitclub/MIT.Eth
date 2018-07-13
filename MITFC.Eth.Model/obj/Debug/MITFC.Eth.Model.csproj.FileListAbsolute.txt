@@ -1,0 +1,7 @@
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\bin\Debug\MITFC.Eth.Model.dll
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\bin\Debug\MITFC.Eth.Model.pdb
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\bin\Debug\Newtonsoft.Json.dll
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\bin\Debug\Newtonsoft.Json.xml
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\obj\Debug\MITFC.Eth.Model.csproj.CoreCompileInputs.cache
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\obj\Debug\MITFC.Eth.Model.dll
+D:\Source-TFS\MIT\Source\MITFC.Eth\MITFC\MITFC.Eth.Model\obj\Debug\MITFC.Eth.Model.pdb
