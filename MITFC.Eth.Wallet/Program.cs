@@ -16,7 +16,7 @@ namespace MITFC.Eth.Wallet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCommand());
+            Application.Run(new FrmWallet());
         }
     }
 }

@@ -17,17 +17,23 @@ namespace MITFC.Eth.Wallet
 {
     public static class ClsNethereum
     {
-        private static string defultAccount = "0x021847be495f99c6DEc42D76c24d167f7Bfb1992";
-        public static string m_DefultAccount
+        public static Nethereum.Web3.Web3 M_Web3 = new Nethereum.Web3.Web3($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
+        public static Web3Geth M_Web3Geth = new Web3Geth($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
+
+        public static Nethereum.Contracts.Contract _Contract = null;
+        public static Nethereum.Contracts.Contract m_Contract
         {
             get
             {
-                return defultAccount;
+                if (_Contract == null)
+                {
+                    _Contract = M_Web3.Eth.GetContract(Consts.M_ABI, Consts.M_ContractAddress);
+
+                }
+                return _Contract;
+
             }
         }
-
-        public static Nethereum.Web3.Web3 M_Web3 = new Nethereum.Web3.Web3($"{Consts.M_RPCServerUrl+Consts.M_Infura_ApiKey}");
-        public static Web3Geth M_Web3Geth = new Web3Geth($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
 
         /// <summary>
         /// unlock account
@@ -38,7 +44,7 @@ namespace MITFC.Eth.Wallet
             var resultM = new ResponseModel<bool>() { IsSuccess = false };
             try
             {
-                var unLockResult = ClsNethereum.M_Web3.Personal.UnlockAccount.SendRequestAsync(m_DefultAccount, strPassword, 1000 * 60 * 10).Result;
+                var unLockResult = M_Web3.Personal.UnlockAccount.SendRequestAsync(Consts.M_DefultAccount, strPassword, 1000 * 60 * 10).Result;
                 if (unLockResult)
                 {
                     resultM.IsSuccess = true;
@@ -73,14 +79,14 @@ namespace MITFC.Eth.Wallet
             try
             {
                 // get contract
-                var c = ClsNethereum.M_Web3.Eth.GetContract(abi, contractAddress);
+                var c = M_Web3.Eth.GetContract(abi, contractAddress);
 
                 List<Object> lstPars = new List<object>();
                 lstPars.Add(option);
                 lstPars.Add(simespan);
                 lstPars.Add(voteNote);
                 var voteForCandidate = c.GetFunction(strFun);
-                var gasTMp = voteForCandidate.EstimateGasAsync(m_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+                var gasTMp = voteForCandidate.EstimateGasAsync(Consts.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
 
                 // get gasprise
                 var gasPrise = M_Web3.Eth.GasPrice.SendRequestAsync().Result;
@@ -137,31 +143,37 @@ namespace MITFC.Eth.Wallet
         /// <param name="password"></param>
         /// <param name="simespan"></param>
         /// <returns></returns>
-        public static ResponseModel<string> Voting(string strFun, string contractAddress, string abi, Int32 simespan, int option, int voteNote)
+        public static ResponseModel<Object> GetDataFromContract(string strFun, List<Object> lstPars)
         {
-            var result = new ResponseModel<string>() { IsSuccess = false };
+            var result = new ResponseModel<Object>() { IsSuccess = false };
             try
             {
-                // new contract
-                var contract = ClsNethereum.M_Web3.Eth.GetContract(abi, contractAddress);
-
-                List<Object> lstPars = new List<object>();
-                lstPars.Add(option);
-                lstPars.Add(simespan);
-                lstPars.Add(voteNote);
-                var voteForCandidate = contract.GetFunction(strFun);
-                var tranCode = voteForCandidate.SendTransactionAsync(m_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
-
-
+                var voteForCandidate = m_Contract.GetFunction(strFun);
+                result.Data = voteForCandidate.CallAsync<Object>(lstPars.ToArray()).Result;
+                
                 result.IsSuccess = true;
-                result.Data = tranCode;
 
             }
             catch (Exception ex)
             {
-                //string strMsg = "Estimating gas is failed, please try again later."; //TODO:update wording 
-                //result.Message =strMsg;
                 ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
+            return result;
+        }
+
+        public static ResponseModel<BigDecimal> GetMITFCBalance(string strAccount)
+        {
+            var result = new ResponseModel<BigDecimal>() { IsSuccess = false };
+
+            List<Object> lstPars = new List<object>();
+            lstPars.Add(strAccount);
+
+            var mitfc = GetDataFromContract(Consts.ContractFunctions.M_BalanceOf, lstPars);
+            result.IsSuccess = mitfc.IsSuccess;
+
+            if (mitfc.IsSuccess)
+            {
+                result.Data = Web3.Convert.FromWeiToBigDecimal((BigInteger)mitfc.Data);
             }
             return result;
         }
@@ -173,7 +185,7 @@ namespace MITFC.Eth.Wallet
         public static BigDecimal GetMyBalance()
         {
             BigDecimal result = 0;
-            var balance = ClsNethereum.M_Web3.Eth.GetBalance.SendRequestAsync(m_DefultAccount).Result;
+            var balance = M_Web3.Eth.GetBalance.SendRequestAsync(Consts.M_DefultAccount).Result;
             result = Web3.Convert.FromWeiToBigDecimal(balance.Value);
             return result;
         }

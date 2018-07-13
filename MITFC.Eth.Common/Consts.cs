@@ -10,7 +10,7 @@ namespace MITFC.Eth.Common
 {
     public class Consts
     {
-        #region "Configs.xml"
+        #region Configs.xml
         public static class Paths
         {
             public static readonly string M_Configs = Application.StartupPath + "\\Configs.xml";
@@ -20,6 +20,7 @@ namespace MITFC.Eth.Common
         {
             public const string M_IsPro = "IsPro";
             public const string M_InfuraApiKey = "InfuraApiKey";
+            public const string M_Account = "Account";
             public const string M_ContractAddress = "ContractAddress";
             public const string M_ABI = "ABI";
         }
@@ -72,6 +73,27 @@ namespace MITFC.Eth.Common
             }
         }
 
+        private static string _defultAccount = "";
+        public static string M_DefultAccount
+        {
+            get
+            {
+                if (_defultAccount == null)
+                {
+                    _defultAccount = m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account].ToString();
+                }
+                return _defultAccount;
+            }
+            set
+            {
+                _defultAccount = value;
+
+                m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account] = _defultAccount;
+                m_dtConfigs.WriteXml(Consts.Paths.M_Configs, XmlWriteMode.WriteSchema);
+            }
+        }
+
+
         private static string _Infura_ApiKey = "";
         public static string M_Infura_ApiKey
         {
@@ -112,6 +134,12 @@ namespace MITFC.Eth.Common
         }
 
         #endregion
+
+        public struct ContractFunctions
+        {
+            public const string M_BalanceOf = "balanceOf";
+
+        }
 
         public static string M_RPCServerUrl
         {
