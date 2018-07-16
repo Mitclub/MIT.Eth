@@ -78,7 +78,7 @@ namespace MITFC.Eth.Common
         {
             get
             {
-                if (_defultAccount == null)
+                if (string.IsNullOrWhiteSpace(_defultAccount))
                 {
                     _defultAccount = m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account].ToString();
                 }

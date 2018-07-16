@@ -38,6 +38,18 @@
             this.lblBalanceMITFC = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLocked = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.rdoEther = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoMITFC = new System.Windows.Forms.RadioButton();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddAccount
@@ -124,15 +136,130 @@
             this.lblLocked.TabIndex = 5;
             this.lblLocked.Text = "False";
             // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(13, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(645, 1);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(12, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Send";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(52, 160);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "To:";
+            // 
+            // txtTo
+            // 
+            this.txtTo.Location = new System.Drawing.Point(85, 157);
+            this.txtTo.Name = "txtTo";
+            this.txtTo.Size = new System.Drawing.Size(573, 20);
+            this.txtTo.TabIndex = 7;
+            this.txtTo.Text = "0xAE33ec3400df0ac8f99a4F171c09985dD466fc72";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(29, 255);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Amount:";
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(85, 252);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(573, 20);
+            this.txtAmount.TabIndex = 7;
+            this.txtAmount.Text = "10";
+            // 
+            // rdoEther
+            // 
+            this.rdoEther.AutoSize = true;
+            this.rdoEther.Location = new System.Drawing.Point(6, 14);
+            this.rdoEther.Name = "rdoEther";
+            this.rdoEther.Size = new System.Drawing.Size(50, 17);
+            this.rdoEther.TabIndex = 8;
+            this.rdoEther.Text = "Ether";
+            this.rdoEther.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdoMITFC);
+            this.groupBox1.Controls.Add(this.rdoEther);
+            this.groupBox1.Location = new System.Drawing.Point(85, 196);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(573, 37);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
+            // rdoMITFC
+            // 
+            this.rdoMITFC.AutoSize = true;
+            this.rdoMITFC.Checked = true;
+            this.rdoMITFC.Location = new System.Drawing.Point(97, 14);
+            this.rdoMITFC.Name = "rdoMITFC";
+            this.rdoMITFC.Size = new System.Drawing.Size(57, 17);
+            this.rdoMITFC.TabIndex = 8;
+            this.rdoMITFC.TabStop = true;
+            this.rdoMITFC.Text = "MITFC";
+            this.rdoMITFC.UseVisualStyleBackColor = true;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(586, 300);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(75, 32);
+            this.btnSend.TabIndex = 11;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(82, 275);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(95, 13);
+            this.lblError.TabIndex = 5;
+            this.lblError.Text = "[Amount] is invalid.";
+            this.lblError.Visible = false;
+            // 
             // FrmWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.ClientSize = new System.Drawing.Size(670, 564);
+            this.ClientSize = new System.Drawing.Size(670, 344);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnCopyAccount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMITFCName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblError);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEtherName);
             this.Controls.Add(this.lblLocked);
             this.Controls.Add(this.lblBalanceMITFC);
@@ -140,12 +267,14 @@
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.btnAddAccount);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(686, 600);
-            this.MinimumSize = new System.Drawing.Size(686, 600);
+            this.MaximumSize = new System.Drawing.Size(686, 380);
+            this.MinimumSize = new System.Drawing.Size(686, 380);
             this.Name = "FrmWallet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MITFC - Wallet";
             this.Load += new System.EventHandler(this.FrmCommand_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +290,17 @@
         private System.Windows.Forms.Label lblBalanceMITFC;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLocked;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTo;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.RadioButton rdoEther;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdoMITFC;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

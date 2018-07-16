@@ -1,4 +1,5 @@
 ﻿using MITFC.Eth.Common;
+using MITFC.Eth.ETHNethereum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,48 @@ namespace MITFC.Eth.Wallet
 
         }
 
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!validateForSend())
+                {
+                    return;
+                }
+
+                if (rdoEther.Checked)
+                {
+                    // send Ether
+                }
+                else
+                {
+                    // send MITFC
+                }
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+            }
+
+        }
+
+        private bool validateForSend()
+        {
+            lblError.Hide();
+
+            double dblAmount = 0;
+            double.TryParse(txtAmount.Text.Trim(), out dblAmount);
+            if (dblAmount <= 0)
+            {
+                txtAmount.Focus();
+                lblError.Text = "";
+                lblError.Show();
+                return false;
+            }
+
+            return true;
+        }
+
         #endregion
 
         #region Function
@@ -74,14 +117,14 @@ namespace MITFC.Eth.Wallet
 
                 // get ether:
                 double dBalance = (double)ClsNethereum.GetMyBalance();
-                this.lblBalanceEther.Text = Math.Round(dBalance, 5).ToString();
+                this.lblBalanceEther.Text = dBalance.ToString("N");// Math.Round(dBalance, 5).ToString();
 
                 // get MITFC:
                 var mitfc = ClsNethereum.GetMITFCBalance(Consts.M_DefultAccount);
                 if (mitfc.IsSuccess)
                 {
                     double dBalanceMitfc = (double)mitfc.Data;
-                    this.lblBalanceMITFC.Text = Math.Round(dBalanceMitfc, 5).ToString();
+                    this.lblBalanceMITFC.Text = dBalanceMitfc.ToString("N");// Math.Round(dBalanceMitfc, 5).ToString("N");
                 }
 
                 // get MITFC Locked status:
@@ -94,6 +137,7 @@ namespace MITFC.Eth.Wallet
             }
 
         }
+
         #endregion
     }
 }

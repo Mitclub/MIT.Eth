@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Model", "MITFC.Et
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Wallet", "MITFC.Eth.Wallet\MITFC.Eth.Wallet.csproj", "{EE5E8296-6342-4CC9-A586-A05D38AE9B89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.ETHNethereum", "MITFC.Eth.ETHNethereum\MITFC.Eth.ETHNethereum.csproj", "{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EE5E8296-6342-4CC9-A586-A05D38AE9B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE5E8296-6342-4CC9-A586-A05D38AE9B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE5E8296-6342-4CC9-A586-A05D38AE9B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
