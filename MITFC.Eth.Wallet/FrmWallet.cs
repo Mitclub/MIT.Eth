@@ -84,6 +84,13 @@ namespace MITFC.Eth.Wallet
                     this.lblBalanceMITFC.Text = Math.Round(dBalanceMitfc, 5).ToString();
                 }
 
+                // get MITFC Locked status:
+                var lockStatus = ClsNethereum.CheckMITFCLocked(Consts.M_DefultAccount);
+                if (lockStatus.IsSuccess)
+                {
+                    this.lblLocked.Text = (!lockStatus.Data).ToString();
+                }
+
             }
 
         }

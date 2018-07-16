@@ -36,6 +36,8 @@
             this.lblMITFCName = new System.Windows.Forms.Label();
             this.lblBalanceEther = new System.Windows.Forms.Label();
             this.lblBalanceMITFC = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblLocked = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnAddAccount
@@ -80,7 +82,7 @@
             // lblMITFCName
             // 
             this.lblMITFCName.AutoSize = true;
-            this.lblMITFCName.Location = new System.Drawing.Point(33, 77);
+            this.lblMITFCName.Location = new System.Drawing.Point(284, 53);
             this.lblMITFCName.Name = "lblMITFCName";
             this.lblMITFCName.Size = new System.Drawing.Size(42, 13);
             this.lblMITFCName.TabIndex = 5;
@@ -98,11 +100,29 @@
             // lblBalanceMITFC
             // 
             this.lblBalanceMITFC.AutoSize = true;
-            this.lblBalanceMITFC.Location = new System.Drawing.Point(82, 77);
+            this.lblBalanceMITFC.Location = new System.Drawing.Point(333, 53);
             this.lblBalanceMITFC.Name = "lblBalanceMITFC";
             this.lblBalanceMITFC.Size = new System.Drawing.Size(13, 13);
             this.lblBalanceMITFC.TabIndex = 5;
             this.lblBalanceMITFC.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(530, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Locked:";
+            // 
+            // lblLocked
+            // 
+            this.lblLocked.AutoSize = true;
+            this.lblLocked.Location = new System.Drawing.Point(583, 53);
+            this.lblLocked.Name = "lblLocked";
+            this.lblLocked.Size = new System.Drawing.Size(32, 13);
+            this.lblLocked.TabIndex = 5;
+            this.lblLocked.Text = "False";
             // 
             // FrmWallet
             // 
@@ -111,14 +131,17 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
             this.ClientSize = new System.Drawing.Size(670, 564);
             this.Controls.Add(this.btnCopyAccount);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblMITFCName);
             this.Controls.Add(this.lblEtherName);
+            this.Controls.Add(this.lblLocked);
             this.Controls.Add(this.lblBalanceMITFC);
             this.Controls.Add(this.lblBalanceEther);
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.btnAddAccount);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(600, 600);
+            this.MaximumSize = new System.Drawing.Size(686, 600);
+            this.MinimumSize = new System.Drawing.Size(686, 600);
             this.Name = "FrmWallet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MITFC - Wallet";
@@ -136,6 +159,8 @@
         private System.Windows.Forms.Label lblMITFCName;
         private System.Windows.Forms.Label lblBalanceEther;
         private System.Windows.Forms.Label lblBalanceMITFC;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblLocked;
     }
 }
 

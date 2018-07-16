@@ -150,7 +150,7 @@ namespace MITFC.Eth.Wallet
             {
                 var voteForCandidate = m_Contract.GetFunction(strFun);
                 result.Data = voteForCandidate.CallAsync<Object>(lstPars.ToArray()).Result;
-                
+
                 result.IsSuccess = true;
 
             }
@@ -174,6 +174,23 @@ namespace MITFC.Eth.Wallet
             if (mitfc.IsSuccess)
             {
                 result.Data = Web3.Convert.FromWeiToBigDecimal((BigInteger)mitfc.Data);
+            }
+            return result;
+        }
+
+        public static ResponseModel<bool> CheckMITFCLocked(string strAccount)
+        {
+            var result = new ResponseModel<bool>() { IsSuccess = false };
+
+            List<Object> lstPars = new List<object>();
+            lstPars.Add(strAccount);
+
+            var mitfc = GetDataFromContract(Consts.ContractFunctions.M_ValidHolder, lstPars);
+            result.IsSuccess = mitfc.IsSuccess;
+
+            if (mitfc.IsSuccess)
+            {
+                result.Data = (bool)mitfc.Data;
             }
             return result;
         }

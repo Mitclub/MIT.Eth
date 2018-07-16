@@ -138,6 +138,7 @@ namespace MITFC.Eth.Common
         public struct ContractFunctions
         {
             public const string M_BalanceOf = "balanceOf";
+            public const string M_ValidHolder = "validHolder";
 
         }
 
