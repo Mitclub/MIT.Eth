@@ -67,6 +67,12 @@
     <Compile Include="FrmAccount.Designer.cs">
       <DependentUpon>FrmAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessage.designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmWallet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAccount.resx">
       <DependentUpon>FrmAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessage.resx">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWallet.resx">
       <DependentUpon>FrmWallet.cs</DependentUpon>
@@ -124,6 +133,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="logo.ico" />
+    <None Include="Resources\warn.png" />
+    <None Include="Resources\icon_ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

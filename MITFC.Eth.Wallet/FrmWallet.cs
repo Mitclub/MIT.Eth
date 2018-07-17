@@ -1,5 +1,6 @@
 ﻿using MITFC.Eth.Common;
 using MITFC.Eth.ETHNethereum;
+using MITFC.Eth.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MITFC.Eth.Common.Consts;
 
 namespace MITFC.Eth.Wallet
 {
@@ -26,7 +28,11 @@ namespace MITFC.Eth.Wallet
         {
             try
             {
-                DisplayFromAccount();
+                Control.CheckForIllegalCrossThreadCalls = false;
+
+                bgwkUpdate.RunWorkerAsync();
+                timUpdate.Interval = 1000 * 60 * 1;
+                timUpdate.Start();
             }
             catch (Exception ex)
             {
@@ -70,14 +76,63 @@ namespace MITFC.Eth.Wallet
                     return;
                 }
 
+                var unLockResult = ClsNethereum.unLockAccount(this.txtPassword.Text.Trim());
+                if (unLockResult.IsSuccess == false)
+                {
+                    new FrmMessage(M_MessageType.Error, unLockResult.Message, false).ShowDialog();
+                    return;
+                }
+
+                ResponseModel<string> sendResult = null;
+
                 if (rdoEther.Checked)
                 {
                     // send Ether
+                    sendResult = ClsNethereum.SendTransaction(Consts.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
+
                 }
                 else
                 {
                     // send MITFC
                 }
+
+                if (sendResult.IsSuccess)
+                {
+                    new FrmMessage(M_MessageType.Success, sendResult.Data, false).ShowDialog();
+                }
+                else
+                {
+                    new FrmMessage(M_MessageType.Error, sendResult.Message, false).ShowDialog();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+            }
+
+        }
+
+        private void timUpdate_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bgwkUpdate.IsBusy != true)
+                {
+                    bgwkUpdate.RunWorkerAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
+        }
+
+        private void bgwkUpdate_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                DisplayFromAccount();
             }
             catch (Exception ex)
             {

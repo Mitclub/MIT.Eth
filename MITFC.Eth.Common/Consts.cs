@@ -169,5 +169,13 @@ namespace MITFC.Eth.Common
             public const string M_Warning = "Warning";
             public const string M_Information = "Information";
         }
+
+        public enum M_MessageType
+        {
+            Error,
+            Success,
+            Information,
+            Abort
+        }
     }
 }

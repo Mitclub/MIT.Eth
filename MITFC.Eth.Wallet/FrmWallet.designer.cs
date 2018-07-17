@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmWallet));
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.lblAccount = new System.Windows.Forms.Label();
@@ -49,6 +50,10 @@
             this.rdoMITFC = new System.Windows.Forms.RadioButton();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.bgwkUpdate = new System.ComponentModel.BackgroundWorker();
+            this.timUpdate = new System.Windows.Forms.Timer(this.components);
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 255);
+            this.label5.Location = new System.Drawing.Point(29, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 5;
@@ -183,7 +188,7 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(85, 252);
+            this.txtAmount.Location = new System.Drawing.Point(85, 260);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(573, 20);
             this.txtAmount.TabIndex = 7;
@@ -203,7 +208,7 @@
             // 
             this.groupBox1.Controls.Add(this.rdoMITFC);
             this.groupBox1.Controls.Add(this.rdoEther);
-            this.groupBox1.Location = new System.Drawing.Point(85, 196);
+            this.groupBox1.Location = new System.Drawing.Point(85, 200);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(573, 37);
             this.groupBox1.TabIndex = 10;
@@ -223,7 +228,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(586, 300);
+            this.btnSend.Location = new System.Drawing.Point(583, 340);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 32);
             this.btnSend.TabIndex = 11;
@@ -235,21 +240,48 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(82, 275);
+            this.lblError.Location = new System.Drawing.Point(82, 283);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(95, 13);
             this.lblError.TabIndex = 5;
             this.lblError.Text = "[Amount] is invalid.";
             this.lblError.Visible = false;
             // 
+            // bgwkUpdate
+            // 
+            this.bgwkUpdate.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwkUpdate_DoWork);
+            // 
+            // timUpdate
+            // 
+            this.timUpdate.Interval = 60000;
+            this.timUpdate.Tick += new System.EventHandler(this.timUpdate_Tick);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(85, 303);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(573, 20);
+            this.txtPassword.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(29, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Amount:";
+            // 
             // FrmWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
-            this.ClientSize = new System.Drawing.Size(670, 344);
+            this.ClientSize = new System.Drawing.Size(670, 384);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnCopyAccount);
@@ -258,6 +290,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblError);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEtherName);
@@ -267,7 +300,7 @@
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.btnAddAccount);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(686, 380);
+            this.MaximumSize = new System.Drawing.Size(686, 420);
             this.MinimumSize = new System.Drawing.Size(686, 380);
             this.Name = "FrmWallet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -301,6 +334,10 @@
         private System.Windows.Forms.RadioButton rdoMITFC;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblError;
+        private System.ComponentModel.BackgroundWorker bgwkUpdate;
+        private System.Windows.Forms.Timer timUpdate;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -74,6 +74,42 @@ namespace MITFC.Eth.ETHNethereum
             return resultM;
         }
 
+        /// <summary>
+        /// voting
+        /// </summary>
+        /// <param name="contractAddress"></param>
+        /// <param name="abi"></param>
+        /// <param name="password"></param>
+        /// <param name="simespan"></param>
+        /// <returns></returns>
+        public static ResponseModel<string> Voting(string strFun, string contractAddress, string abi, Int32 simespan, int option, int voteNote)
+        {
+            var result = new ResponseModel<string>() { IsSuccess = false };
+            try
+            {
+                // new contract
+                var contract = ClsNethereum.M_Web3.Eth.GetContract(abi, contractAddress);
+
+                List<Object> lstPars = new List<object>();
+                lstPars.Add(option);
+                lstPars.Add(simespan);
+                lstPars.Add(voteNote);
+                var voteForCandidate = contract.GetFunction(strFun);
+                var tranCode = voteForCandidate.SendTransactionAsync(Consts.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+                
+                result.IsSuccess = true;
+                result.Data = tranCode;
+
+            }
+            catch (Exception ex)
+            {
+                //string strMsg = "Estimating gas is failed, please try again later."; //TODO:update wording 
+                //result.Message =strMsg;
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
+            return result;
+        }
+
         public static ResponseModel<BigDecimal> GetMITFCBalance(string strAccount)
         {
             var result = new ResponseModel<BigDecimal>() { IsSuccess = false };

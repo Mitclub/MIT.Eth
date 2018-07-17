@@ -28,5 +28,25 @@ namespace MITFC.Eth.ETHNethereum
             result = Web3.Convert.FromWeiToBigDecimal(balance.Value);
             return result;
         }
+
+        /// <summary>
+        /// Send transaction from 'from' to 'to'
+        /// </summary>
+        /// <returns></returns>
+        public static ResponseModel<string> SendTransaction(string from, string to, double amount)
+        {
+            var result = new ResponseModel<string>() { IsSuccess = false };
+            try
+            {
+                result.Data= M_Web3.Eth.TransactionManager.SendTransactionAsync(from, to, new HexBigInteger(Web3.Convert.ToWei(amount, UnitConversion.EthUnit.Ether))).Result;
+                result.IsSuccess = true;
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
+            return result;
+        }
     }
 }
