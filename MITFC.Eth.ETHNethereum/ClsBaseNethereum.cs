@@ -17,9 +17,9 @@ namespace MITFC.Eth.ETHNethereum
 {
     public partial class ClsNethereum
     {
-        public static Nethereum.Web3.Web3 M_Web3 = new Nethereum.Web3.Web3($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
+        public static Web3 M_Web3 = new Web3($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
         public static Web3Geth M_Web3Geth = new Web3Geth($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
-        
+
         /// <summary>
         /// unlock account
         /// </summary>
@@ -29,6 +29,7 @@ namespace MITFC.Eth.ETHNethereum
             var resultM = new ResponseModel<bool>() { IsSuccess = false };
             try
             {
+                var accounts=M_Web3.Eth.Accounts.SendRequestAsync().Result;
                 var unLockResult = M_Web3.Personal.UnlockAccount.SendRequestAsync(Consts.M_DefultAccount, strPassword, 1000 * 60 * 10).Result;
                 if (unLockResult)
                 {
@@ -43,7 +44,7 @@ namespace MITFC.Eth.ETHNethereum
             }
             catch (Exception ex)
             {
-                resultM.Message = "The password is incorrect. Please try again.";
+                resultM.Message = ex.Message;
                 ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
 
