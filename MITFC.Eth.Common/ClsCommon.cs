@@ -67,7 +67,7 @@ namespace MITFC.Eth.Common
 
             }
 
-            private static string getIp1()
+            private static void getIp1()
             {
                 var ips = Dns.GetHostAddresses(Dns.GetHostName());
                 foreach (IPAddress IPA in ips)
@@ -78,11 +78,9 @@ namespace MITFC.Eth.Common
 
                     }
                 }
-
-                return strIP4Address;
             }
 
-            private static string getIp2()
+            private static void getIp2()
             {
                 ManagementClass mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
                 ManagementObjectCollection nics = mc.GetInstances();
@@ -105,8 +103,6 @@ namespace MITFC.Eth.Common
                         //string ipgateway = (nic["DefaultIPGateway"] as String[])[0];//默认网关
                     }
                 }
-
-                return strIP4Address;
             }
 
         }

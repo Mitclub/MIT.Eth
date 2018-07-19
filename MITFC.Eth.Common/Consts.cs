@@ -14,6 +14,7 @@ namespace MITFC.Eth.Common
         public static class Paths
         {
             public static readonly string M_Configs = Application.StartupPath + "\\Configs.xml";
+            public static readonly string M_Geth = Application.StartupPath + "\\Geth";
         }
 
         public struct ConfigFields

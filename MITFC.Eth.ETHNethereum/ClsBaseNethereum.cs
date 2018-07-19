@@ -17,8 +17,10 @@ namespace MITFC.Eth.ETHNethereum
 {
     public partial class ClsNethereum
     {
-        public static Web3 M_Web3 = new Web3($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
-        public static Web3Geth M_Web3Geth = new Web3Geth($"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}");
+        //private static string m_RpcUrl = $"{Consts.M_RPCServerUrl + Consts.M_Infura_ApiKey}";
+        private static string m_RpcUrl = "http://localhost:8545";
+        public static Web3 M_Web3 = new Web3(m_RpcUrl);
+        public static Web3Geth M_Web3Geth = new Web3Geth(m_RpcUrl);
 
         /// <summary>
         /// unlock account
