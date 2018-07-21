@@ -22,6 +22,21 @@ namespace MITFC.Eth.ETHNethereum
         public static Web3 M_Web3 = new Web3(m_RpcUrl);
         public static Web3Geth M_Web3Geth = new Web3Geth(m_RpcUrl);
         
+        private static string defultAccount = "";
+        public static string M_DefultAccount
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(defultAccount))
+                {
+                    var accounts = M_Web3Geth.Eth.Accounts.SendRequestAsync().Result;
+                    defultAccount = accounts.FirstOrDefault();
+                }
+                return defultAccount;
+            }
+            set { defultAccount = value; }
+        }
+
         /// <summary>
         /// need start geth first
         /// </summary>
@@ -36,7 +51,7 @@ namespace MITFC.Eth.ETHNethereum
 
                 if (!string.IsNullOrWhiteSpace(newAccount) && newAccount.Length > 4)
                 {
-                    Consts.M_DefultAccount = newAccount;
+                    ClsNethereum.M_DefultAccount = newAccount;
                     result = true;
                 }
             }
@@ -58,7 +73,7 @@ namespace MITFC.Eth.ETHNethereum
             try
             {
                 var accounts=M_Web3.Eth.Accounts.SendRequestAsync().Result;
-                var unLockResult = M_Web3.Personal.UnlockAccount.SendRequestAsync(Consts.M_DefultAccount, strPassword, 1000 * 60 * 10).Result;
+                var unLockResult = M_Web3.Personal.UnlockAccount.SendRequestAsync(ClsNethereum.M_DefultAccount, strPassword, 1000 * 60 * 10).Result;
                 if (unLockResult)
                 {
                     resultM.IsSuccess = true;

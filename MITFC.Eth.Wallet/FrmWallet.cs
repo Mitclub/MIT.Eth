@@ -26,7 +26,7 @@ namespace MITFC.Eth.Wallet
         {
             get
             {
-                return !string.IsNullOrEmpty(Consts.M_DefultAccount);
+                return !string.IsNullOrEmpty(ClsNethereum.M_DefultAccount);
             }
         }
 
@@ -79,7 +79,7 @@ namespace MITFC.Eth.Wallet
         {
             try
             {
-                Clipboard.SetDataObject(Consts.M_DefultAccount, true);
+                Clipboard.SetDataObject(ClsNethereum.M_DefultAccount, true);
             }
             catch (Exception ex)
             {
@@ -109,7 +109,7 @@ namespace MITFC.Eth.Wallet
                 if (rdoEther.Checked)
                 {
                     // send Ether
-                    sendResult = ClsNethereum.SendTransaction(Consts.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
+                    sendResult = ClsNethereum.SendTransaction(ClsNethereum.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
 
                 }
                 else
@@ -186,14 +186,14 @@ namespace MITFC.Eth.Wallet
         {
             if (m_HasAccount)
             {
-                this.lblAccount.Text = Consts.M_DefultAccount;
+                this.lblAccount.Text = ClsNethereum.M_DefultAccount;
 
                 // get ether:
                 double dBalance = (double)ClsNethereum.GetMyBalance();
                 this.lblBalanceEther.Text = dBalance.ToString("N");// Math.Round(dBalance, 5).ToString();
 
                 // get MITFC:
-                var mitfc = ClsNethereum.GetMITFCBalance(Consts.M_DefultAccount);
+                var mitfc = ClsNethereum.GetMITFCBalance(ClsNethereum.M_DefultAccount);
                 if (mitfc.IsSuccess)
                 {
                     double dBalanceMitfc = (double)mitfc.Data;
@@ -201,7 +201,7 @@ namespace MITFC.Eth.Wallet
                 }
 
                 // get MITFC Locked status:
-                var lockStatus = ClsNethereum.CheckMITFCLocked(Consts.M_DefultAccount);
+                var lockStatus = ClsNethereum.CheckMITFCLocked(ClsNethereum.M_DefultAccount);
                 if (lockStatus.IsSuccess)
                 {
                     this.lblLocked.Text = (!lockStatus.Data).ToString();

@@ -1,4 +1,5 @@
 ﻿using MITFC.Eth.Common;
+using MITFC.Eth.ETHNethereum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,7 +23,7 @@ namespace MITFC.Eth.Wallet
         {
             try
             {
-                this.txtAccount.Text = Consts.M_DefultAccount;
+                this.txtAccount.Text = ClsNethereum.M_DefultAccount;
             }
             catch (Exception ex)
             {
@@ -40,7 +41,7 @@ namespace MITFC.Eth.Wallet
                 }
                 else
                 {
-                    Consts.M_DefultAccount = txtAccount.Text.Trim();
+                    ClsNethereum.M_DefultAccount = txtAccount.Text.Trim();
                     this.Close();
                 }
             }

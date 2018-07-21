@@ -53,7 +53,7 @@ namespace MITFC.Eth.ETHNethereum
                 lstPars.Add(simespan);
                 lstPars.Add(voteNote);
                 var voteForCandidate = c.GetFunction(strFun);
-                var gasTMp = voteForCandidate.EstimateGasAsync(Consts.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+                var gasTMp = voteForCandidate.EstimateGasAsync(ClsNethereum.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
 
                 // get gasprise
                 var gasPrise = M_Web3.Eth.GasPrice.SendRequestAsync().Result;
@@ -95,7 +95,7 @@ namespace MITFC.Eth.ETHNethereum
                 lstPars.Add(simespan);
                 lstPars.Add(voteNote);
                 var voteForCandidate = contract.GetFunction(strFun);
-                var tranCode = voteForCandidate.SendTransactionAsync(Consts.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+                var tranCode = voteForCandidate.SendTransactionAsync(ClsNethereum.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(voteNote * 2, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
                 
                 result.IsSuccess = true;
                 result.Data = tranCode;

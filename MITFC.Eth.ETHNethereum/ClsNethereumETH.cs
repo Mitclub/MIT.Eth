@@ -24,7 +24,7 @@ namespace MITFC.Eth.ETHNethereum
         public static BigDecimal GetMyBalance()
         {
             BigDecimal result = 0;
-            var balance = M_Web3.Eth.GetBalance.SendRequestAsync(Consts.M_DefultAccount).Result;
+            var balance = M_Web3.Eth.GetBalance.SendRequestAsync(ClsNethereum.M_DefultAccount).Result;
             result = Web3.Convert.FromWeiToBigDecimal(balance.Value);
             return result;
         }

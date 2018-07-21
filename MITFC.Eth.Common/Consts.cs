@@ -75,25 +75,25 @@ namespace MITFC.Eth.Common
             }
         }
 
-        private static string _defultAccount = "";
-        public static string M_DefultAccount
-        {
-            get
-            {
-                if (string.IsNullOrWhiteSpace(_defultAccount))
-                {
-                    _defultAccount = m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account].ToString();
-                }
-                return _defultAccount;
-            }
-            set
-            {
-                _defultAccount = value;
+        //private static string _defultAccount = "";
+        //public static string M_DefultAccount
+        //{
+        //    get
+        //    {
+        //        if (string.IsNullOrWhiteSpace(_defultAccount))
+        //        {
+        //            _defultAccount = m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account].ToString();
+        //        }
+        //        return _defultAccount;
+        //    }
+        //    set
+        //    {
+        //        _defultAccount = value;
 
-                m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account] = _defultAccount;
-                m_dtConfigs.WriteXml(Consts.Paths.M_Configs, XmlWriteMode.WriteSchema);
-            }
-        }
+        //        m_dtConfigs.Rows[0][Consts.ConfigFields.M_Account] = _defultAccount;
+        //        m_dtConfigs.WriteXml(Consts.Paths.M_Configs, XmlWriteMode.WriteSchema);
+        //    }
+        //}
 
 
         private static string _Infura_ApiKey = "";
