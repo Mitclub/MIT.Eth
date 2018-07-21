@@ -74,6 +74,12 @@
     <Compile Include="FrmMessage.designer.cs">
       <DependentUpon>FrmMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPassword.designer.cs">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmWallet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMessage.resx">
       <DependentUpon>FrmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPassword.resx">
+      <DependentUpon>FrmPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWallet.resx">
       <DependentUpon>FrmWallet.cs</DependentUpon>
@@ -133,7 +142,9 @@
     <Content Include="Configs.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Geth\geth.exe" />
+    <Content Include="Geth\geth.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="logo.ico" />
     <None Include="Resources\warn.png" />
     <None Include="Resources\icon_ok.png" />

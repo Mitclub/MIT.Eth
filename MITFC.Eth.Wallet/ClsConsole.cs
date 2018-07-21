@@ -32,7 +32,7 @@ namespace MITFC.Eth.Wallet
             //process.ProcessorAffinity = (IntPtr)0x0001; // 使用cpu1
 
             string strIp = ClsCommon.ClintInfor.M_IP;
-            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --rpcapi \"db,eth,net,web3,personal,admin,miner\" console");
+            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"" + Consts.Paths.M_MITFC + "\" --rpcapi \"db,eth,net,web3,personal,admin,miner\" console");
 
             ClsConsole.M_Process.BeginOutputReadLine();
         }

@@ -18,6 +18,20 @@ namespace MITFC.Eth.Wallet
 {
     public partial class FrmWallet : Form
     {
+        #region Property
+        /// <summary>
+        /// 
+        /// </summary>
+        private bool m_HasAccount
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(Consts.M_DefultAccount);
+            }
+        }
+
+        #endregion
+
         #region Events
         public FrmWallet()
         {
@@ -29,6 +43,9 @@ namespace MITFC.Eth.Wallet
             try
             {
                 Control.CheckForIllegalCrossThreadCalls = false;
+
+                // start geth
+                ClsConsole.startGeth();
 
                 bgwkUpdate.RunWorkerAsync();
                 timUpdate.Interval = 1000 * 60 * 1;
@@ -44,8 +61,12 @@ namespace MITFC.Eth.Wallet
         {
             try
             {
-                new FrmAccount().ShowDialog();
-                DisplayFromAccount();
+                //new FrmAccount().ShowDialog();
+                //DisplayFromAccount();
+
+                FrmPassword ps = new FrmPassword();
+                ps.GetPasswordEvent += GetPassword;
+                ps.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -163,10 +184,7 @@ namespace MITFC.Eth.Wallet
         #region Function
         private void DisplayFromAccount()
         {
-            if (string.IsNullOrWhiteSpace(Consts.M_DefultAccount))
-            {
-            }
-            else
+            if (m_HasAccount)
             {
                 this.lblAccount.Text = Consts.M_DefultAccount;
 
@@ -189,8 +207,40 @@ namespace MITFC.Eth.Wallet
                     this.lblLocked.Text = (!lockStatus.Data).ToString();
                 }
 
+                btnAddAccount.Enabled = false;
             }
+            else
+            {
+                btnAddAccount.Enabled = true;
+            }
+        }
 
+        private void GetPassword(object sender, FrmPassword.GetPasswordEventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(e.M_Password))
+                {
+                    if (ClsNethereum.createNewAccount(e.M_Password))
+                    {
+                        DisplayFromAccount();
+                    }
+                    else
+                    {
+                        string strMessage = @"The registration process is failed.It may be caused in unstable network environment.Please try again later. For repeated issue, please contact ";
+                        FrmMessage msg = new FrmMessage(M_MessageType.Error
+                                                        , strMessage
+                                                        , true);
+                        msg.ShowDialog();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
         }
 
         #endregion

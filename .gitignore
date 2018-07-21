@@ -3,3 +3,8 @@
 ################################################################################
 
 /MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/chaindata
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/nodes
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/transactions.rlp
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/nodekey
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/LOCK
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/history

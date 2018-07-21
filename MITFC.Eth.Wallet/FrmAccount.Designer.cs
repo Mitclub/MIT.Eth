@@ -38,7 +38,7 @@
             // 
             this.txtAccount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAccount.Location = new System.Drawing.Point(68, 4);
+            this.txtAccount.Location = new System.Drawing.Point(68, 9);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(372, 20);
             this.txtAccount.TabIndex = 6;
@@ -58,7 +58,7 @@
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(368, 31);
+            this.btnOK.Location = new System.Drawing.Point(368, 35);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(72, 23);
             this.btnOK.TabIndex = 7;
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(199)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(452, 64);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtAccount);

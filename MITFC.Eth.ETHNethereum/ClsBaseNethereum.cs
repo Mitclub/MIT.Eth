@@ -21,6 +21,32 @@ namespace MITFC.Eth.ETHNethereum
         private static string m_RpcUrl = "http://localhost:8545";
         public static Web3 M_Web3 = new Web3(m_RpcUrl);
         public static Web3Geth M_Web3Geth = new Web3Geth(m_RpcUrl);
+        
+        /// <summary>
+        /// need start geth first
+        /// </summary>
+        /// <param name="strPassword"></param>
+        public static bool createNewAccount(string strPassword)
+        {
+            bool result = false;
+            try
+            {
+                var newAccount = M_Web3.Personal.NewAccount.SendRequestAsync(strPassword).Result;
+                //process.StandardInput.WriteLine($"personal.newAccount('{strPassword}')");
+
+                if (!string.IsNullOrWhiteSpace(newAccount) && newAccount.Length > 4)
+                {
+                    Consts.M_DefultAccount = newAccount;
+                    result = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// unlock account
