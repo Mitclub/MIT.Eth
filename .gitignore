@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/MITFC.Eth.Wallet/bin/Debug/Geth/MITFC/geth/chaindata
