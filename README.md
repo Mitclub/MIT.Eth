@@ -1,3 +1,3 @@
 # MITFC.Eth
-1. Light wallet.
+1. Wallet.
 2. Admin tool.
