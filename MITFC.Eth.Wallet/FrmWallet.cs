@@ -46,9 +46,10 @@ namespace MITFC.Eth.Wallet
 
                 // start geth
                 ClsConsole.startGeth();
+                //System.Threading.Thread.Sleep(1000 * 10);
 
-                bgwkUpdate.RunWorkerAsync();
-                timUpdate.Interval = 1000 * 60 * 1;
+                //bgwkUpdate.RunWorkerAsync();
+                timUpdate.Interval = 1000 * 30;
                 timUpdate.Start();
             }
             catch (Exception ex)
@@ -65,7 +66,7 @@ namespace MITFC.Eth.Wallet
                 //DisplayFromAccount();
 
                 FrmPassword ps = new FrmPassword();
-                ps.GetPasswordEvent += GetPassword;
+                ps.GetPasswordEvent += CreateAccount;
                 ps.ShowDialog();
             }
             catch (Exception ex)
@@ -115,6 +116,7 @@ namespace MITFC.Eth.Wallet
                 else
                 {
                     // send MITFC
+                    sendResult = ClsNethereum.SendMITFC(ClsNethereum.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
                 }
 
                 if (sendResult.IsSuccess)
@@ -215,7 +217,7 @@ namespace MITFC.Eth.Wallet
             }
         }
 
-        private void GetPassword(object sender, FrmPassword.GetPasswordEventArgs e)
+        private void CreateAccount(object sender, FrmPassword.GetPasswordEventArgs e)
         {
             try
             {

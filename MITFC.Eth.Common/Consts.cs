@@ -76,7 +76,7 @@ namespace MITFC.Eth.Common
         }
 
         //private static string _defultAccount = "";
-        //public static string M_DefultAccount
+        //public static string M_TestAccount
         //{
         //    get
         //    {
@@ -94,7 +94,6 @@ namespace MITFC.Eth.Common
         //        m_dtConfigs.WriteXml(Consts.Paths.M_Configs, XmlWriteMode.WriteSchema);
         //    }
         //}
-
 
         private static string _Infura_ApiKey = "";
         public static string M_Infura_ApiKey
@@ -141,6 +140,7 @@ namespace MITFC.Eth.Common
         {
             public const string M_BalanceOf = "balanceOf";
             public const string M_ValidHolder = "validHolder";
+            public const string M_TransferFrom = "transferFrom";
 
         }
 

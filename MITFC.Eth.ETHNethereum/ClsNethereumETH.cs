@@ -24,7 +24,7 @@ namespace MITFC.Eth.ETHNethereum
         public static BigDecimal GetMyBalance()
         {
             BigDecimal result = 0;
-            var balance = M_Web3.Eth.GetBalance.SendRequestAsync(ClsNethereum.M_DefultAccount).Result;
+            var balance = M_Web3_Infura.Eth.GetBalance.SendRequestAsync(ClsNethereum.M_DefultAccount).Result;
             result = Web3.Convert.FromWeiToBigDecimal(balance.Value);
             return result;
         }
@@ -38,7 +38,7 @@ namespace MITFC.Eth.ETHNethereum
             var result = new ResponseModel<string>() { IsSuccess = false };
             try
             {
-                result.Data= M_Web3.Eth.TransactionManager.SendTransactionAsync(from, to, new HexBigInteger(Web3.Convert.ToWei(amount, UnitConversion.EthUnit.Ether))).Result;
+                result.Data= M_Web3_Geth.Eth.TransactionManager.SendTransactionAsync(from, to, new HexBigInteger(Web3.Convert.ToWei(amount, UnitConversion.EthUnit.Ether))).Result;
                 result.IsSuccess = true;
             }
             catch (Exception ex)

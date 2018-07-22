@@ -37,11 +37,10 @@ namespace MITFC.Eth.Wallet
             {
                 if (string.IsNullOrWhiteSpace(this.txtAccount.Text))
                 {
-                    MessageBox.Show(this, "Please enter Account.", "Account");
+                    MessageBox.Show(this, "Please enter your account.", "Account");
                 }
                 else
                 {
-                    ClsNethereum.M_DefultAccount = txtAccount.Text.Trim();
                     this.Close();
                 }
             }
