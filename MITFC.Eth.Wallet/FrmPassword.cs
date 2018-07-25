@@ -12,6 +12,7 @@ namespace MITFC.Eth.Wallet
 {
     public partial class FrmPassword : Form
     {
+        #region Properties
         public class GetPasswordEventArgs : EventArgs // 事件参数类
         {
             private string password = "";
@@ -27,7 +28,9 @@ namespace MITFC.Eth.Wallet
         // 定义事件
         public event GetPasswordEventHandler GetPasswordEvent;
 
+        #endregion
 
+        #region Events
         public FrmPassword()
         {
             InitializeComponent();
@@ -62,9 +65,7 @@ namespace MITFC.Eth.Wallet
                 this.txtRepassword.Focus();
             }
         }
-
-
-
+        
         private void txtRepassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) 
@@ -76,5 +77,7 @@ namespace MITFC.Eth.Wallet
         private void FrmPassword_Load(object sender, EventArgs e)
         {
         }
+
+        #endregion
     }
 }

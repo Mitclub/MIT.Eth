@@ -14,6 +14,7 @@ namespace MITFC.Eth.Wallet
 {
     public partial class FrmAccount : Form
     {
+        #region Events
         public FrmAccount()
         {
             InitializeComponent();
@@ -49,5 +50,7 @@ namespace MITFC.Eth.Wallet
                 ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
             }
         }
+
+        #endregion
     }
 }

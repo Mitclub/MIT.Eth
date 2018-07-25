@@ -16,6 +16,7 @@ namespace MITFC.Eth.Wallet
     {
         private bool m_needAppendEmailAddress = false;
 
+        #region Events
         public FrmMessage(M_MessageType messageType, string message, bool needAppendEmailAddress = false)
         {
             InitializeComponent();
@@ -62,5 +63,7 @@ namespace MITFC.Eth.Wallet
 
             this.btnOK.Focus();
         }
+
+        #endregion
     }
 }
