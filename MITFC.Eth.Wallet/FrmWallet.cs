@@ -62,9 +62,6 @@ namespace MITFC.Eth.Wallet
         {
             try
             {
-                //new FrmAccount().ShowDialog();
-                //DisplayFromAccount();
-
                 FrmPassword ps = new FrmPassword();
                 ps.GetPasswordEvent += CreateAccount;
                 ps.ShowDialog();

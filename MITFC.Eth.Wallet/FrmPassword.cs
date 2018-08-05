@@ -13,7 +13,7 @@ namespace MITFC.Eth.Wallet
     public partial class FrmPassword : Form
     {
         #region Properties
-        public class GetPasswordEventArgs : EventArgs // 事件参数类
+        public class GetPasswordEventArgs : EventArgs
         {
             private string password = "";
             public string M_Password
@@ -23,9 +23,7 @@ namespace MITFC.Eth.Wallet
             }
         }
         
-        // 声明委托
         public delegate void GetPasswordEventHandler(object sender, GetPasswordEventArgs e);
-        // 定义事件
         public event GetPasswordEventHandler GetPasswordEvent;
 
         #endregion
