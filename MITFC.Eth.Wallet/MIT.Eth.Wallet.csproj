@@ -125,17 +125,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MITFC.Eth.Common\MITFC.Eth.Common.csproj">
+    <ProjectReference Include="..\MITFC.Eth.Common\MIT.Eth.Common.csproj">
       <Project>{eef752a3-df3a-4241-8e0a-e673df1fe798}</Project>
-      <Name>MITFC.Eth.Common</Name>
+      <Name>MIT.Eth.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MITFC.Eth.ETHNethereum\MITFC.Eth.ETHNethereum.csproj">
+    <ProjectReference Include="..\MITFC.Eth.ETHNethereum\MIT.Eth.ETHNethereum.csproj">
       <Project>{55f3b3ff-1542-4444-a16e-397a6d7ddcf3}</Project>
-      <Name>MITFC.Eth.ETHNethereum</Name>
+      <Name>MIT.Eth.ETHNethereum</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MITFC.Eth.Model\MITFC.Eth.Model.csproj">
+    <ProjectReference Include="..\MITFC.Eth.Model\MIT.Eth.Model.csproj">
       <Project>{932e9b59-c95f-45f4-b230-e3e515444850}</Project>
-      <Name>MITFC.Eth.Model</Name>
+      <Name>MIT.Eth.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -55,9 +55,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MITFC.Eth.Model\MITFC.Eth.Model.csproj">
+    <ProjectReference Include="..\MITFC.Eth.Model\MIT.Eth.Model.csproj">
       <Project>{932E9B59-C95F-45F4-B230-E3E515444850}</Project>
-      <Name>MITFC.Eth.Model</Name>
+      <Name>MIT.Eth.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

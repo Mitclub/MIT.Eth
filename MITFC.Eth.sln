@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Common", "MITFC.Eth.Common\MITFC.Eth.Common.csproj", "{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.Common", "MITFC.Eth.Common\MIT.Eth.Common.csproj", "{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Model", "MITFC.Eth.Model\MITFC.Eth.Model.csproj", "{932E9B59-C95F-45F4-B230-E3E515444850}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.Model", "MITFC.Eth.Model\MIT.Eth.Model.csproj", "{932E9B59-C95F-45F4-B230-E3E515444850}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.Wallet", "MITFC.Eth.Wallet\MITFC.Eth.Wallet.csproj", "{EE5E8296-6342-4CC9-A586-A05D38AE9B89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.Wallet", "MITFC.Eth.Wallet\MIT.Eth.Wallet.csproj", "{EE5E8296-6342-4CC9-A586-A05D38AE9B89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MITFC.Eth.ETHNethereum", "MITFC.Eth.ETHNethereum\MITFC.Eth.ETHNethereum.csproj", "{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.ETHNethereum", "MITFC.Eth.ETHNethereum\MIT.Eth.ETHNethereum.csproj", "{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
