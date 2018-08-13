@@ -1,8 +1,0 @@
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\bin\Debug\DXC.BlockChain.Model.dll
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\bin\Debug\DXC.BlockChain.Model.pdb
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\bin\Debug\Newtonsoft.Json.dll
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\bin\Debug\Newtonsoft.Json.xml
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\obj\Debug\DXC.BlockChain.Model.csprojResolveAssemblyReference.cache
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\obj\Debug\DXC.BlockChain.Model.csproj.CoreCompileInputs.cache
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\obj\Debug\DXC.BlockChain.Model.dll
-D:\HPETFS001\X-Pocket\Releases\1.02\X-Pocket\DXC.BlockChain.Model\obj\Debug\DXC.BlockChain.Model.pdb
