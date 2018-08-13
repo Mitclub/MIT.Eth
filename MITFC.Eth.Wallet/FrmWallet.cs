@@ -1,6 +1,6 @@
-﻿using MITFC.Eth.Common;
-using MITFC.Eth.ETHNethereum;
-using MITFC.Eth.Model;
+﻿using MIT.Eth.Common;
+using MIT.Eth.ETHNethereum;
+using MIT.Eth.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MITFC.Eth.Common.Consts;
+using static MIT.Eth.Common.Consts;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     public partial class FrmWallet : Form
     {
@@ -112,8 +112,8 @@ namespace MITFC.Eth.Wallet
                 }
                 else
                 {
-                    // send MITFC
-                    sendResult = ClsNethereum.SendMITFC(ClsNethereum.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
+                    // send MIT
+                    sendResult = ClsNethereum.SendMIT(ClsNethereum.M_DefultAccount, txtTo.Text.Trim(), Convert.ToDouble(txtAmount.Text));
                 }
 
                 if (sendResult.IsSuccess)
@@ -191,16 +191,16 @@ namespace MITFC.Eth.Wallet
                 double dBalance = (double)ClsNethereum.GetMyBalance();
                 this.lblBalanceEther.Text = dBalance.ToString("N");// Math.Round(dBalance, 5).ToString();
 
-                // get MITFC:
-                var mitfc = ClsNethereum.GetMITFCBalance(ClsNethereum.M_DefultAccount);
-                if (mitfc.IsSuccess)
+                // get MIT:
+                var MIT = ClsNethereum.GetMITBalance(ClsNethereum.M_DefultAccount);
+                if (MIT.IsSuccess)
                 {
-                    double dBalanceMitfc = (double)mitfc.Data;
-                    this.lblBalanceMITFC.Text = dBalanceMitfc.ToString("N");// Math.Round(dBalanceMitfc, 5).ToString("N");
+                    double dBalanceMIT = (double)MIT.Data;
+                    this.lblBalanceMIT.Text = dBalanceMIT.ToString("N");// Math.Round(dBalanceMIT, 5).ToString("N");
                 }
 
-                // get MITFC Locked status:
-                var lockStatus = ClsNethereum.CheckMITFCLocked(ClsNethereum.M_DefultAccount);
+                // get MIT Locked status:
+                var lockStatus = ClsNethereum.CheckMITLocked(ClsNethereum.M_DefultAccount);
                 if (lockStatus.IsSuccess)
                 {
                     this.lblLocked.Text = (!lockStatus.Data).ToString();

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.Common
+namespace MIT.Eth.Common
 {
     public class Consts
     {
@@ -15,7 +15,7 @@ namespace MITFC.Eth.Common
         {
             public static readonly string M_Configs = Application.StartupPath + "\\Configs.xml";
             public static readonly string M_Geth = Application.StartupPath + "\\Geth";
-            public static readonly string M_MITFC = Application.StartupPath + "\\Geth\\MITFC";
+            public static readonly string M_MIT = Application.StartupPath + "\\Geth\\MIT";
         }
 
         public struct ConfigFields

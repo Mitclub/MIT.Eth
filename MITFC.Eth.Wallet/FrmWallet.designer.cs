@@ -1,4 +1,4 @@
-﻿namespace MITFC.Eth.Wallet
+﻿namespace MIT.Eth.Wallet
 {
     partial class FrmWallet
     {
@@ -34,9 +34,9 @@
             this.lblAccount = new System.Windows.Forms.Label();
             this.btnCopyAccount = new System.Windows.Forms.Button();
             this.lblEtherName = new System.Windows.Forms.Label();
-            this.lblMITFCName = new System.Windows.Forms.Label();
+            this.lblMITName = new System.Windows.Forms.Label();
             this.lblBalanceEther = new System.Windows.Forms.Label();
-            this.lblBalanceMITFC = new System.Windows.Forms.Label();
+            this.lblBalanceMIT = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLocked = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.rdoEther = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoMITFC = new System.Windows.Forms.RadioButton();
+            this.rdoMIT = new System.Windows.Forms.RadioButton();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.bgwkUpdate = new System.ComponentModel.BackgroundWorker();
@@ -96,14 +96,14 @@
             this.lblEtherName.TabIndex = 5;
             this.lblEtherName.Text = "Ether:";
             // 
-            // lblMITFCName
+            // lblMITName
             // 
-            this.lblMITFCName.AutoSize = true;
-            this.lblMITFCName.Location = new System.Drawing.Point(284, 53);
-            this.lblMITFCName.Name = "lblMITFCName";
-            this.lblMITFCName.Size = new System.Drawing.Size(42, 13);
-            this.lblMITFCName.TabIndex = 5;
-            this.lblMITFCName.Text = "MITFC:";
+            this.lblMITName.AutoSize = true;
+            this.lblMITName.Location = new System.Drawing.Point(284, 53);
+            this.lblMITName.Name = "lblMITName";
+            this.lblMITName.Size = new System.Drawing.Size(42, 13);
+            this.lblMITName.TabIndex = 5;
+            this.lblMITName.Text = "MIT:";
             // 
             // lblBalanceEther
             // 
@@ -114,14 +114,14 @@
             this.lblBalanceEther.TabIndex = 5;
             this.lblBalanceEther.Text = "0";
             // 
-            // lblBalanceMITFC
+            // lblBalanceMIT
             // 
-            this.lblBalanceMITFC.AutoSize = true;
-            this.lblBalanceMITFC.Location = new System.Drawing.Point(333, 53);
-            this.lblBalanceMITFC.Name = "lblBalanceMITFC";
-            this.lblBalanceMITFC.Size = new System.Drawing.Size(13, 13);
-            this.lblBalanceMITFC.TabIndex = 5;
-            this.lblBalanceMITFC.Text = "0";
+            this.lblBalanceMIT.AutoSize = true;
+            this.lblBalanceMIT.Location = new System.Drawing.Point(333, 53);
+            this.lblBalanceMIT.Name = "lblBalanceMIT";
+            this.lblBalanceMIT.Size = new System.Drawing.Size(13, 13);
+            this.lblBalanceMIT.TabIndex = 5;
+            this.lblBalanceMIT.Text = "0";
             // 
             // label1
             // 
@@ -206,7 +206,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rdoMITFC);
+            this.groupBox1.Controls.Add(this.rdoMIT);
             this.groupBox1.Controls.Add(this.rdoEther);
             this.groupBox1.Location = new System.Drawing.Point(85, 200);
             this.groupBox1.Name = "groupBox1";
@@ -214,17 +214,17 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
-            // rdoMITFC
+            // rdoMIT
             // 
-            this.rdoMITFC.AutoSize = true;
-            this.rdoMITFC.Checked = true;
-            this.rdoMITFC.Location = new System.Drawing.Point(97, 14);
-            this.rdoMITFC.Name = "rdoMITFC";
-            this.rdoMITFC.Size = new System.Drawing.Size(57, 17);
-            this.rdoMITFC.TabIndex = 8;
-            this.rdoMITFC.TabStop = true;
-            this.rdoMITFC.Text = "MITFC";
-            this.rdoMITFC.UseVisualStyleBackColor = true;
+            this.rdoMIT.AutoSize = true;
+            this.rdoMIT.Checked = true;
+            this.rdoMIT.Location = new System.Drawing.Point(97, 14);
+            this.rdoMIT.Name = "rdoMIT";
+            this.rdoMIT.Size = new System.Drawing.Size(57, 17);
+            this.rdoMIT.TabIndex = 8;
+            this.rdoMIT.TabStop = true;
+            this.rdoMIT.Text = "MIT";
+            this.rdoMIT.UseVisualStyleBackColor = true;
             // 
             // btnSend
             // 
@@ -286,7 +286,7 @@
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnCopyAccount);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblMITFCName);
+            this.Controls.Add(this.lblMITName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblError);
@@ -295,7 +295,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEtherName);
             this.Controls.Add(this.lblLocked);
-            this.Controls.Add(this.lblBalanceMITFC);
+            this.Controls.Add(this.lblBalanceMIT);
             this.Controls.Add(this.lblBalanceEther);
             this.Controls.Add(this.lblAccount);
             this.Controls.Add(this.btnAddAccount);
@@ -304,7 +304,7 @@
             this.MinimumSize = new System.Drawing.Size(686, 380);
             this.Name = "FrmWallet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MITFC - Wallet";
+            this.Text = "MIT - Wallet";
             this.Load += new System.EventHandler(this.FrmCommand_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -318,9 +318,9 @@
         private System.Windows.Forms.Label lblAccount;
         private System.Windows.Forms.Button btnCopyAccount;
         private System.Windows.Forms.Label lblEtherName;
-        private System.Windows.Forms.Label lblMITFCName;
+        private System.Windows.Forms.Label lblMITName;
         private System.Windows.Forms.Label lblBalanceEther;
-        private System.Windows.Forms.Label lblBalanceMITFC;
+        private System.Windows.Forms.Label lblBalanceMIT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLocked;
         private System.Windows.Forms.Label label2;
@@ -331,7 +331,7 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.RadioButton rdoEther;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdoMITFC;
+        private System.Windows.Forms.RadioButton rdoMIT;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Label lblError;
         private System.ComponentModel.BackgroundWorker bgwkUpdate;

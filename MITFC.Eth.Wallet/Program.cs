@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     static class Program
     {

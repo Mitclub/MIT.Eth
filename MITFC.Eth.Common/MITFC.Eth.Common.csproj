@@ -7,8 +7,8 @@
     <ProjectGuid>{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MITFC.Eth.Common</RootNamespace>
-    <AssemblyName>MITFC.Eth.Common</AssemblyName>
+    <RootNamespace>MIT.Eth.Common</RootNamespace>
+    <AssemblyName>MIT.Eth.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

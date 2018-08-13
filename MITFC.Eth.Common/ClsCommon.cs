@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.Common
+namespace MIT.Eth.Common
 {
     public class ClsCommon
     {

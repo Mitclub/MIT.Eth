@@ -1,5 +1,5 @@
-﻿using MITFC.Eth.Common;
-using MITFC.Eth.ETHNethereum;
+﻿using MIT.Eth.Common;
+using MIT.Eth.ETHNethereum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     public partial class FrmAccount : Form
     {

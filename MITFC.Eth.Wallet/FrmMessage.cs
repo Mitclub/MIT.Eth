@@ -1,4 +1,4 @@
-﻿using MITFC.Eth.Common;
+﻿using MIT.Eth.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MITFC.Eth.Common.Consts;
+using static MIT.Eth.Common.Consts;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     public partial class FrmMessage : Form
     {

@@ -1,5 +1,5 @@
-﻿using MITFC.Eth.Common;
-using MITFC.Eth.Model;
+﻿using MIT.Eth.Common;
+using MIT.Eth.Model;
 using Newtonsoft.Json;
 using System;
 using Nethereum.Hex.HexTypes;
@@ -8,7 +8,7 @@ using Nethereum.Web3;
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace MITFC.Eth.ETHNethereum
+namespace MIT.Eth.ETHNethereum
 {
     public partial class ClsNethereum
     {
@@ -54,41 +54,41 @@ namespace MITFC.Eth.ETHNethereum
             return resultM;
         }
 
-        public static ResponseModel<BigDecimal> GetMITFCBalance(string strAccount)
+        public static ResponseModel<BigDecimal> GetMITBalance(string strAccount)
         {
             var result = new ResponseModel<BigDecimal>() { IsSuccess = false };
 
             List<Object> lstPars = new List<object>();
             lstPars.Add(strAccount);
 
-            var mitfc = GetContractFun_Infura(Consts.ContractFunctions.M_BalanceOf, lstPars);
-            result.IsSuccess = mitfc.IsSuccess;
+            var MIT = GetContractFun_Infura(Consts.ContractFunctions.M_BalanceOf, lstPars);
+            result.IsSuccess = MIT.IsSuccess;
 
-            if (mitfc.IsSuccess)
+            if (MIT.IsSuccess)
             {
-                result.Data = Web3.Convert.FromWeiToBigDecimal((BigInteger)mitfc.Data);
+                result.Data = Web3.Convert.FromWeiToBigDecimal((BigInteger)MIT.Data);
             }
             return result;
         }
 
-        public static ResponseModel<bool> CheckMITFCLocked(string strAccount)
+        public static ResponseModel<bool> CheckMITLocked(string strAccount)
         {
             var result = new ResponseModel<bool>() { IsSuccess = false };
 
             List<Object> lstPars = new List<object>();
             lstPars.Add(strAccount);
 
-            var mitfc = GetContractFun_Infura(Consts.ContractFunctions.M_ValidHolder, lstPars);
-            result.IsSuccess = mitfc.IsSuccess;
+            var MIT = GetContractFun_Infura(Consts.ContractFunctions.M_ValidHolder, lstPars);
+            result.IsSuccess = MIT.IsSuccess;
 
-            if (mitfc.IsSuccess)
+            if (MIT.IsSuccess)
             {
-                result.Data = (bool)mitfc.Data;
+                result.Data = (bool)MIT.Data;
             }
             return result;
         }
 
-        public static ResponseModel<string> SendMITFC(string from, string to, double amount)
+        public static ResponseModel<string> SendMIT(string from, string to, double amount)
         {
             var result = new ResponseModel<string>() { IsSuccess = false };
             try

@@ -1,5 +1,5 @@
-﻿using MITFC.Eth.Common;
-using MITFC.Eth.Model;
+﻿using MIT.Eth.Common;
+using MIT.Eth.Model;
 using Newtonsoft.Json;
 using System;
 using Nethereum.Web3;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 
-namespace MITFC.Eth.ETHNethereum
+namespace MIT.Eth.ETHNethereum
 {
     public partial class ClsNethereum
     {

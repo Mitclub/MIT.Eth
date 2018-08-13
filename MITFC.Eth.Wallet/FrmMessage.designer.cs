@@ -1,4 +1,4 @@
-﻿namespace MITFC.Eth.Wallet
+﻿namespace MIT.Eth.Wallet
 {
     partial class FrmMessage
     {
@@ -70,7 +70,7 @@
             // 
             this.imgWarn.BackColor = System.Drawing.Color.Transparent;
             this.imgWarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.imgWarn.Image = global::MITFC.Eth.Wallet.Properties.Resources.warn;
+            this.imgWarn.Image = global::MIT.Eth.Wallet.Properties.Resources.warn;
             this.imgWarn.Location = new System.Drawing.Point(15, 14);
             this.imgWarn.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.imgWarn.Name = "imgWarn";

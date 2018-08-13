@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     public partial class FrmPassword : Form
     {

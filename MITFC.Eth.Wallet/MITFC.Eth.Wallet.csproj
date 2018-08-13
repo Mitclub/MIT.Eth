@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EE5E8296-6342-4CC9-A586-A05D38AE9B89}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MITFC.Eth.Wallet</RootNamespace>
-    <AssemblyName>MITFC.Eth.Wallet</AssemblyName>
+    <RootNamespace>MIT.Eth.Wallet</RootNamespace>
+    <AssemblyName>MIT.Eth.Wallet</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

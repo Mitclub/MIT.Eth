@@ -7,8 +7,8 @@
     <ProjectGuid>{932E9B59-C95F-45F4-B230-E3E515444850}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MITFC.Eth.Model</RootNamespace>
-    <AssemblyName>MITFC.Eth.Model</AssemblyName>
+    <RootNamespace>MIT.Eth.Model</RootNamespace>
+    <AssemblyName>MIT.Eth.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

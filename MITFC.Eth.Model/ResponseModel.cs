@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MITFC.Eth.Model
+namespace MIT.Eth.Model
 {
     public class ResponseModel<T>
     {

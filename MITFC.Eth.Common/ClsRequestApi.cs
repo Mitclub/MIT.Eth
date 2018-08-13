@@ -1,4 +1,4 @@
-﻿using MITFC.Eth.Model;
+﻿using MIT.Eth.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MITFC.Eth.Common
+namespace MIT.Eth.Common
 {
     public static class ClsRequestApi<T>
     {

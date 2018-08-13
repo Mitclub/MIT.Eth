@@ -1,4 +1,4 @@
-﻿using MITFC.Eth.Common;
+﻿using MIT.Eth.Common;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MITFC.Eth.Wallet
+namespace MIT.Eth.Wallet
 {
     public class ClsConsole
     {
@@ -34,8 +34,8 @@ namespace MITFC.Eth.Wallet
             //string strIp = ClsCommon.ClintInfor.M_IP;
 
             string testNode = Consts.M_IsPro.Value ? string.Empty : " --testnet";
-            //ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MITFC}\"{testNode} --syncmode \"light\" --rpcapi \"db,eth,net,web3,personal,admin,miner\""
-            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MITFC}\"{testNode} --rpcapi \"db,eth,net,web3,personal,admin,miner\""
+            //ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MIT}\"{testNode} --syncmode \"light\" --rpcapi \"db,eth,net,web3,personal,admin,miner\""
+            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MIT}\"{testNode} --rpcapi \"db,eth,net,web3,personal,admin,miner\""
                 + $" --bootnodes \"{string.Join(",", Consts.Enodes.M_Enodes)}\""
                 + " console");
 

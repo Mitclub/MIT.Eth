@@ -1,4 +1,4 @@
-﻿namespace MITFC.Eth.Wallet
+﻿namespace MIT.Eth.Wallet
 {
     partial class FrmAccount
     {

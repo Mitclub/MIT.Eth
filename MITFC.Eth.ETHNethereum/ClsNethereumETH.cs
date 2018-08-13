@@ -1,11 +1,11 @@
-﻿using MITFC.Eth.Common;
-using MITFC.Eth.Model;
+﻿using MIT.Eth.Common;
+using MIT.Eth.Model;
 using System;
 using Nethereum.Hex.HexTypes;
 using Nethereum.Util;
 using Nethereum.Web3;
 
-namespace MITFC.Eth.ETHNethereum
+namespace MIT.Eth.ETHNethereum
 {
     public partial class ClsNethereum
     {
