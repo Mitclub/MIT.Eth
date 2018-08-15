@@ -20,7 +20,7 @@ namespace MIT.Eth.Wallet
     {
         #region Property
         /// <summary>
-        /// 
+        /// 账号是否已创建
         /// </summary>
         private bool m_HasAccount
         {
