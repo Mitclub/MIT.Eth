@@ -54,7 +54,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
         }
 
@@ -68,7 +68,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
 
         }
@@ -81,7 +81,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
 
         }
@@ -128,7 +128,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
 
         }
@@ -156,7 +156,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.Message, Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
             }
 
         }
