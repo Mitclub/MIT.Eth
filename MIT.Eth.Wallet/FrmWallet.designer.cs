@@ -46,14 +46,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoMIT = new System.Windows.Forms.RadioButton();
+            this.rdoEther = new System.Windows.Forms.RadioButton();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.bgwkUpdate = new System.ComponentModel.BackgroundWorker();
             this.timUpdate = new System.Windows.Forms.Timer(this.components);
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.rdoMIT = new System.Windows.Forms.RadioButton();
-            this.rdoEther = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,9 +204,33 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             // 
+            // rdoMIT
+            // 
+            this.rdoMIT.Checked = true;
+            this.rdoMIT.Image = global::MIT.Eth.Wallet.Properties.Resources.logo50;
+            this.rdoMIT.Location = new System.Drawing.Point(6, 10);
+            this.rdoMIT.Name = "rdoMIT";
+            this.rdoMIT.Size = new System.Drawing.Size(94, 53);
+            this.rdoMIT.TabIndex = 8;
+            this.rdoMIT.TabStop = true;
+            this.rdoMIT.Text = "MIT";
+            this.rdoMIT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.rdoMIT.UseVisualStyleBackColor = true;
+            // 
+            // rdoEther
+            // 
+            this.rdoEther.Image = global::MIT.Eth.Wallet.Properties.Resources.ETH;
+            this.rdoEther.Location = new System.Drawing.Point(146, 10);
+            this.rdoEther.Name = "rdoEther";
+            this.rdoEther.Size = new System.Drawing.Size(82, 53);
+            this.rdoEther.TabIndex = 8;
+            this.rdoEther.Text = "ETH";
+            this.rdoEther.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.rdoEther.UseVisualStyleBackColor = true;
+            // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(583, 378);
+            this.btnSend.Location = new System.Drawing.Point(583, 380);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 32);
             this.btnSend.TabIndex = 11;
@@ -250,30 +274,6 @@
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "Password:";
-            // 
-            // rdoMIT
-            // 
-            this.rdoMIT.Checked = true;
-            this.rdoMIT.Image = global::MIT.Eth.Wallet.Properties.Resources.logo50;
-            this.rdoMIT.Location = new System.Drawing.Point(6, 10);
-            this.rdoMIT.Name = "rdoMIT";
-            this.rdoMIT.Size = new System.Drawing.Size(94, 53);
-            this.rdoMIT.TabIndex = 8;
-            this.rdoMIT.TabStop = true;
-            this.rdoMIT.Text = "MIT";
-            this.rdoMIT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.rdoMIT.UseVisualStyleBackColor = true;
-            // 
-            // rdoEther
-            // 
-            this.rdoEther.Image = global::MIT.Eth.Wallet.Properties.Resources.ETH;
-            this.rdoEther.Location = new System.Drawing.Point(146, 10);
-            this.rdoEther.Name = "rdoEther";
-            this.rdoEther.Size = new System.Drawing.Size(82, 53);
-            this.rdoEther.TabIndex = 8;
-            this.rdoEther.Text = "ETH";
-            this.rdoEther.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.rdoEther.UseVisualStyleBackColor = true;
             // 
             // FrmWallet
             // 
