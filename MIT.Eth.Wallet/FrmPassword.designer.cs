@@ -60,19 +60,19 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(124, 49);
+            this.txtPassword.Location = new System.Drawing.Point(108, 49);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(238, 20);
+            this.txtPassword.Size = new System.Drawing.Size(254, 20);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtRepassword
             // 
-            this.txtRepassword.Location = new System.Drawing.Point(124, 80);
+            this.txtRepassword.Location = new System.Drawing.Point(108, 80);
             this.txtRepassword.Name = "txtRepassword";
             this.txtRepassword.PasswordChar = '*';
-            this.txtRepassword.Size = new System.Drawing.Size(238, 20);
+            this.txtRepassword.Size = new System.Drawing.Size(254, 20);
             this.txtRepassword.TabIndex = 2;
             this.txtRepassword.UseSystemPasswordChar = true;
             this.txtRepassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRepassword_KeyDown);
@@ -94,7 +94,7 @@
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(121, 103);
+            this.lblError.Location = new System.Drawing.Point(105, 103);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(161, 13);
             this.lblError.TabIndex = 0;

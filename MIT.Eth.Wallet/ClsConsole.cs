@@ -10,6 +10,9 @@ namespace MIT.Eth.Wallet
 {
     public class ClsConsole
     {
+        /// <summary>
+        /// the Singleton command process
+        /// </summary>
         public static System.Diagnostics.Process M_Process = new System.Diagnostics.Process();
         
         /// <summary>
@@ -42,6 +45,11 @@ namespace MIT.Eth.Wallet
             ClsConsole.M_Process.BeginOutputReadLine();
         }
 
+        /// <summary>
+        /// output of cmd.exe
+        /// </summary>
+        /// <param name="sendingProcess"></param>
+        /// <param name="outLine"></param>
         private static void OutputHandler(object sendingProcess, DataReceivedEventArgs outLine)
         {
             try
