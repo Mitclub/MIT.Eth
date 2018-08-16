@@ -86,7 +86,7 @@ namespace MIT.Eth.ETHNethereum
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
 
             return result;
@@ -117,7 +117,7 @@ namespace MIT.Eth.ETHNethereum
             catch (Exception ex)
             {
                 resultM.Message = ex.Message;
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
 
             return resultM;
@@ -145,7 +145,7 @@ namespace MIT.Eth.ETHNethereum
             catch (Exception ex)
             {
                 resultM.Message = "Get gasprise is failed, please try again later.";
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
 
             return resultM;
@@ -172,7 +172,7 @@ namespace MIT.Eth.ETHNethereum
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
             return result;
         }
@@ -198,7 +198,7 @@ namespace MIT.Eth.ETHNethereum
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
             return result;
         }

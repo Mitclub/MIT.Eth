@@ -11,14 +11,14 @@ namespace MIT.Eth.Common
     public class Consts
     {
         #region Configs.xml
-        public static class Paths
+        public static class M_Paths
         {
             public static readonly string M_Configs = Application.StartupPath + "\\Configs.xml";
             public static readonly string M_Geth = Application.StartupPath + "\\Geth";
             public static readonly string M_MIT = Application.StartupPath + "\\Geth\\MIT";
         }
 
-        public struct ConfigFields
+        public struct M_ConfigFields
         {
             public const string M_IsPro = "IsPro";
             public const string M_InfuraApiKey = "InfuraApiKey";
@@ -38,9 +38,9 @@ namespace MIT.Eth.Common
                     {
                         #region Get init config file(Configs.xml)
                         DataSet dsConfigs = new DataSet();
-                        if (System.IO.File.Exists(Consts.Paths.M_Configs))
+                        if (System.IO.File.Exists(Consts.M_Paths.M_Configs))
                         {
-                            dsConfigs.ReadXml(Consts.Paths.M_Configs);
+                            dsConfigs.ReadXml(Consts.M_Paths.M_Configs);
                         }
 
                         if (dsConfigs.Tables.Count > 0)
@@ -53,7 +53,7 @@ namespace MIT.Eth.Common
                 }
                 catch (Exception ex)
                 {
-                    ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                    ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
                 }
                 return _dtConfigs;
             }
@@ -69,7 +69,7 @@ namespace MIT.Eth.Common
             {
                 if (_isPro == null)
                 {
-                    _isPro = bool.Parse(m_dtConfigs.Rows[0][Consts.ConfigFields.M_IsPro].ToString());
+                    _isPro = bool.Parse(m_dtConfigs.Rows[0][Consts.M_ConfigFields.M_IsPro].ToString());
                 }
                 return _isPro;
             }
@@ -102,7 +102,7 @@ namespace MIT.Eth.Common
             {
                 if (_Infura_ApiKey == "")
                 {
-                    _Infura_ApiKey = m_dtConfigs.Rows[0][Consts.ConfigFields.M_InfuraApiKey].ToString();
+                    _Infura_ApiKey = m_dtConfigs.Rows[0][Consts.M_ConfigFields.M_InfuraApiKey].ToString();
                 }
                 return _Infura_ApiKey;
             }
@@ -115,7 +115,7 @@ namespace MIT.Eth.Common
             {
                 if (_ContractAddress == "")
                 {
-                    _ContractAddress = m_dtConfigs.Rows[0][Consts.ConfigFields.M_ContractAddress].ToString();
+                    _ContractAddress = m_dtConfigs.Rows[0][Consts.M_ConfigFields.M_ContractAddress].ToString();
                 }
                 return _ContractAddress;
             }
@@ -128,7 +128,7 @@ namespace MIT.Eth.Common
             {
                 if (_ABI == "")
                 {
-                    _ABI = m_dtConfigs.Rows[0][Consts.ConfigFields.M_ABI].ToString();
+                    _ABI = m_dtConfigs.Rows[0][Consts.M_ConfigFields.M_ABI].ToString();
                 }
                 return _ABI;
             }
@@ -136,7 +136,7 @@ namespace MIT.Eth.Common
 
         #endregion
 
-        public struct ContractFunctions
+        public struct M_ContractFunctions
         {
             public const string M_BalanceOf = "balanceOf";
             public const string M_ValidHolder = "validHolder";
@@ -165,7 +165,7 @@ namespace MIT.Eth.Common
         /// <summary>
         /// Log type
         /// </summary>
-        public struct LogType
+        public struct M_LogType
         {
             public const string M_Error = "Error";
             public const string M_Warning = "Warning";
@@ -180,9 +180,9 @@ namespace MIT.Eth.Common
             Abort
         }
 
-        public static class Enodes
+        public static class M_Enode
         {
-            private static string[] M_Test = {"enode://0892c4cd5d110406f77bcfe95e5afebe83e24d59a4dcc01bc89e5068eaf1d28b8dd68d11ad47e03d036e2dd883f21e93de26aa9c607d78dc1e07a21cf496e8a1@5.189.148.135:48293"
+            private static string[] m_Test = {"enode://0892c4cd5d110406f77bcfe95e5afebe83e24d59a4dcc01bc89e5068eaf1d28b8dd68d11ad47e03d036e2dd883f21e93de26aa9c607d78dc1e07a21cf496e8a1@5.189.148.135:48293"
                                                 ,"enode://0937aa1794d22e01e56f64b90bfa0efc93b5b4aee305d4788bca2b6b4d090393b70b9a6d2fa43d4ea29ed1b420ad748954702ae3f8327d57c400c4a84346e424@46.51.202.218:33434"
                                                 ,"enode://14e22f64f50c9e91fb3cf9374f1bca36a84591d777d3814d89803aa98f500b5d21c6868c8a0f64fdc6e932a47afebb99d900084fd73b76b2f2e31b79170445b5@36.152.8.188:42556"
                                                 ,"enode://4239237689393f39ca3d06a00a92d0a582be3f9f761b7b9c6794be3c04af7b5435bd3bbb6ab0a87d6c3cb70018c0461500ed0db4ed7830fb613aaf0b2b3a5850@18.182.18.240:42754"
@@ -207,7 +207,7 @@ namespace MIT.Eth.Common
                                                 ,"enode://f153a428aabab692be0e5091523d80117d47ac831b08b58d6c0129d0cf6dc470f422d985e9c0dbf33713d50d8570e52e0d7fc675ed5e21e86093a977de9fbf4f@35.192.105.45:30303"
                                                 ,"enode://f20969a03e20fc57252da75640fbbbeed5135068dca54104442149a70823c607fb845f6c6a3d144b11f14c0ce115758343a1c3414f01c56eaaaadf2ee7074b1f@35.199.163.44:34422"};
 
-            public static string[] M_Production = {"enode://1088893383e5c0d0cd110ed5b29e39407ccc1091d0c2ecad1494d342f0410439294922d3d8a2f7cbd0728001dc0588e960d15003706c07366ff5cb086c097600@35.237.143.74:30303"
+            public static string[] m_Production = {"enode://1088893383e5c0d0cd110ed5b29e39407ccc1091d0c2ecad1494d342f0410439294922d3d8a2f7cbd0728001dc0588e960d15003706c07366ff5cb086c097600@35.237.143.74:30303"
                                                 ,"enode://217ef992007eacdb5e690e992a138a576fbda5d42eb87f6e2e7c06ccbfc1520bf26011bf4596efd6e277fc12f7770697692a232a7765887e2209cb36841ed688@18.184.25.143:30303"
                                                 ,"enode://2fbac23ad2664a7e8a4ce41b2ee92e6a4924e846934f5afc31051f8c3f5f2f81f4533e4d88e217021736c04aeab634002c3880f6fd162ea792d8f42ba3c67235@195.201.196.98:30303"
                                                 ,"enode://3488a9892b349d8cd2631f837c4e22e688b681959b2bba3b4290dc37dd970e12db41bc3809f473889ac77e1bab60e90e368bb1314b0527cfd6759d95464aae58@52.29.201.111:30303"
@@ -231,11 +231,11 @@ namespace MIT.Eth.Common
                 {
                     if (M_IsPro.Value)
                     {
-                        return M_Production;
+                        return m_Production;
                     }
                     else
                     {
-                        return M_Test;
+                        return m_Test;
                     }
 
                 }

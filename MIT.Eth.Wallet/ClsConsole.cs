@@ -22,7 +22,7 @@ namespace MIT.Eth.Wallet
         {
             ClsConsole.M_Process = new Process();
             ClsConsole.M_Process.StartInfo.FileName = "cmd.exe";
-            ClsConsole.M_Process.StartInfo.WorkingDirectory = Consts.Paths.M_Geth;
+            ClsConsole.M_Process.StartInfo.WorkingDirectory = Consts.M_Paths.M_Geth;
             ClsConsole.M_Process.StartInfo.UseShellExecute = false;
             ClsConsole.M_Process.StartInfo.RedirectStandardInput = true;
             ClsConsole.M_Process.StartInfo.RedirectStandardOutput = true;
@@ -38,8 +38,8 @@ namespace MIT.Eth.Wallet
 
             string testNode = Consts.M_IsPro.Value ? string.Empty : " --testnet";
             //ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MIT}\"{testNode} --syncmode \"light\" --rpcapi \"db,eth,net,web3,personal,admin,miner\""
-            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.Paths.M_MIT}\"{testNode} --rpcapi \"db,eth,net,web3,personal,admin,miner\""
-                + $" --bootnodes \"{string.Join(",", Consts.Enodes.M_Enodes)}\""
+            ClsConsole.M_Process.StandardInput.WriteLine($"geth --rpc --rpccorsdomain \"http://localhost:8545\" --datadir \"{Consts.M_Paths.M_MIT}\"{testNode} --rpcapi \"db,eth,net,web3,personal,admin,miner\""
+                + $" --bootnodes \"{string.Join(",", Consts.M_Enode.M_Enodes)}\""
                 + " console");
 
             ClsConsole.M_Process.BeginOutputReadLine();
@@ -56,13 +56,13 @@ namespace MIT.Eth.Wallet
             {
                 if (!String.IsNullOrEmpty(outLine.Data))
                 {
-                    ClsCommon.WriteLog(outLine.Data, Consts.LogType.M_Information);
+                    ClsCommon.WriteLog(outLine.Data, Consts.M_LogType.M_Information);
                 }
 
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
         }
     }

@@ -28,7 +28,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
         }
 
@@ -47,7 +47,7 @@ namespace MIT.Eth.Wallet
             }
             catch (Exception ex)
             {
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
         }
 

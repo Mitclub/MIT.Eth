@@ -48,7 +48,7 @@ namespace MIT.Eth.ETHNethereum
             catch (Exception ex)
             {
                 resultM.Message = "Estimating gas is failed, please try again later.";
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
 
             return resultM;
@@ -61,7 +61,7 @@ namespace MIT.Eth.ETHNethereum
             List<Object> lstPars = new List<object>();
             lstPars.Add(strAccount);
 
-            var MIT = GetContractFun_Infura(Consts.ContractFunctions.M_BalanceOf, lstPars);
+            var MIT = GetContractFun_Infura(Consts.M_ContractFunctions.M_BalanceOf, lstPars);
             result.IsSuccess = MIT.IsSuccess;
 
             if (MIT.IsSuccess)
@@ -78,7 +78,7 @@ namespace MIT.Eth.ETHNethereum
             List<Object> lstPars = new List<object>();
             lstPars.Add(strAccount);
 
-            var MIT = GetContractFun_Infura(Consts.ContractFunctions.M_ValidHolder, lstPars);
+            var MIT = GetContractFun_Infura(Consts.M_ContractFunctions.M_ValidHolder, lstPars);
             result.IsSuccess = MIT.IsSuccess;
 
             if (MIT.IsSuccess)
@@ -97,7 +97,7 @@ namespace MIT.Eth.ETHNethereum
                 lstPars.Add(from);
                 lstPars.Add(to);
                 lstPars.Add(amount);
-                var sendT = m_Contract_Geth.GetFunction(Consts.ContractFunctions.M_TransferFrom);
+                var sendT = m_Contract_Geth.GetFunction(Consts.M_ContractFunctions.M_TransferFrom);
                 var tranCode = sendT.SendTransactionAsync(ClsNethereum.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(0, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
 
                 result.IsSuccess = true;
@@ -106,7 +106,7 @@ namespace MIT.Eth.ETHNethereum
             catch (Exception ex)
             {
                 result.Message = ex.Message;
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
             return result;
         }

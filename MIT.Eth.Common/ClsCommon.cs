@@ -15,7 +15,7 @@ namespace MIT.Eth.Common
 {
     public class ClsCommon
     {
-        static ReaderWriterLockSlim LogWriteLock = new ReaderWriterLockSlim();
+        static ReaderWriterLockSlim m_LogWriteLock = new ReaderWriterLockSlim();
 
         /// <summary>
         /// write logs
@@ -24,14 +24,14 @@ namespace MIT.Eth.Common
         /// <param name="logtype"></param>
         static public void WriteLog(string strMessage, string logtype)
         {
-            LogWriteLock.EnterWriteLock();
+            m_LogWriteLock.EnterWriteLock();
 
             StreamWriter sw = new StreamWriter(Application.StartupPath + "\\" + DateTime.Today.ToString("yyyyMM") + ".log", true);
             //sw.WriteLine("============================================================================");
             sw.WriteLine(string.Format("[{0}][{1}]:{2}", logtype, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), strMessage));
             sw.Close();
 
-            LogWriteLock.ExitWriteLock();
+            m_LogWriteLock.ExitWriteLock();
         }
         /// <summary>
         /// Open URL with IE

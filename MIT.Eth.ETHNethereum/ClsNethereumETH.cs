@@ -36,7 +36,7 @@ namespace MIT.Eth.ETHNethereum
             catch (Exception ex)
             {
                 result.Message = ex.Message;
-                ClsCommon.WriteLog(ex.ToString(), Consts.LogType.M_Error);
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
             return result;
         }
