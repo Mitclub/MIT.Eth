@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E640A601-D4C0-4A34-96A5-23030E73FEB1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MIT.eth.Tool</RootNamespace>
-    <AssemblyName>MIT.eth.Tool</AssemblyName>
+    <RootNamespace>MIT.Eth.Tool</RootNamespace>
+    <AssemblyName>MIT.Eth.Tool</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -67,6 +67,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

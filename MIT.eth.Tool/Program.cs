@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MIT.eth.Tool
+namespace MIT.Eth.Tool
 {
     static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace MIT.eth.Tool
+﻿namespace MIT.Eth.Tool
 {
     partial class FrmMain
     {

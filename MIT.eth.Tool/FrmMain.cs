@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MIT.eth.Tool
+namespace MIT.Eth.Tool
 {
     public partial class FrmMain : Form
     {
