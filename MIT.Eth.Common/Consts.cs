@@ -141,6 +141,8 @@ namespace MIT.Eth.Common
             public const string M_BalanceOf = "balanceOf";
             public const string M_ValidHolder = "validHolder";
             public const string M_TransferFrom = "transferFrom";
+            public const string M_Lock = "_lockToken";
+            public const string M_Unlock = "_unlockToken";
 
         }
 

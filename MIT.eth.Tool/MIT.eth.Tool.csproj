@@ -90,6 +90,18 @@
       <Project>{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}</Project>
       <Name>MIT.Eth.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MIT.Eth.ETHNethereum\MIT.Eth.ETHNethereum.csproj">
+      <Project>{55F3B3FF-1542-4444-A16E-397A6D7DDCF3}</Project>
+      <Name>MIT.Eth.ETHNethereum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MIT.Eth.Model\MIT.Eth.Model.csproj">
+      <Project>{932E9B59-C95F-45F4-B230-E3E515444850}</Project>
+      <Name>MIT.Eth.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MIT.Eth.UI.Utils\MIT.Eth.UI.Utils.csproj">
+      <Project>{4A2393EA-E23F-4A77-841B-82E83EAF3519}</Project>
+      <Name>MIT.Eth.UI.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

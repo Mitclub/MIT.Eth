@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE5E8296-6342-4CC9-A586-A05D38AE9B89}</ProjectGuid>
+    <ProjectGuid>{4A2393EA-E23F-4A77-841B-82E83EAF3519}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MIT.Eth.Wallet</RootNamespace>
-    <AssemblyName>MIT.Eth.Wallet</AssemblyName>
+    <RootNamespace>MIT.Eth.UI.Utils</RootNamespace>
+    <AssemblyName>MIT.Eth.UI.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,25 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\packages\BouncyCastle.1.8.2\lib\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Nethereum.Util">
-      <HintPath>..\..\..\..\HPETFS001\X-Pocket\main\X-Pocket\DXC.BlockChain.App\bin\Debug\Nethereum.Util.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,35 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsConsole.cs" />
-    <Compile Include="FrmAccount.cs">
+    <Compile Include="FrmMessage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAccount.Designer.cs">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPassword.designer.cs">
-      <DependentUpon>FrmPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmWallet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmWallet.designer.cs">
-      <DependentUpon>FrmWallet.cs</DependentUpon>
+    <Compile Include="FrmMessage.designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAccount.resx">
-      <DependentUpon>FrmAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmPassword.resx">
-      <DependentUpon>FrmPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmWallet.resx">
-      <DependentUpon>FrmWallet.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMessage.resx">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,7 +66,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,34 +81,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MIT.Eth.Common\MIT.Eth.Common.csproj">
-      <Project>{eef752a3-df3a-4241-8e0a-e673df1fe798}</Project>
+      <Project>{EEF752A3-DF3A-4241-8E0A-E673DF1FE798}</Project>
       <Name>MIT.Eth.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MIT.Eth.ETHNethereum\MIT.Eth.ETHNethereum.csproj">
-      <Project>{55f3b3ff-1542-4444-a16e-397a6d7ddcf3}</Project>
-      <Name>MIT.Eth.ETHNethereum</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MIT.Eth.Model\MIT.Eth.Model.csproj">
-      <Project>{932e9b59-c95f-45f4-b230-e3e515444850}</Project>
-      <Name>MIT.Eth.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MIT.Eth.UI.Utils\MIT.Eth.UI.Utils.csproj">
-      <Project>{4A2393EA-E23F-4A77-841B-82E83EAF3519}</Project>
-      <Name>MIT.Eth.UI.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configs.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Geth\geth.exe">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="logo.ico" />
-    <None Include="Resources\ETH.jpg" />
-    <None Include="Resources\logo50.png" />
-    <None Include="Resources\warn.png" />
     <None Include="Resources\icon_ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

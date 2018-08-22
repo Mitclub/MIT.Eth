@@ -110,5 +110,60 @@ namespace MIT.Eth.ETHNethereum
             }
             return result;
         }
+
+        /// <summary>
+        /// Lock(Testing)
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="simespan"></param>
+        /// <returns></returns>
+        public static ResponseModel<string> LockMIT(string account, Int32 simespan)
+        {
+            var result = new ResponseModel<string>() { IsSuccess = false };
+            try
+            {
+                List<Object> lstPars = new List<object>();
+                lstPars.Add(account);
+                lstPars.Add(simespan);
+                var sendT = m_Contract_Geth.GetFunction(Consts.M_ContractFunctions.M_Lock);
+                var tranCode = sendT.SendTransactionAsync(ClsNethereum.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(0, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+
+                result.IsSuccess = true;
+                result.Data = tranCode;
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Unlock(Testing)
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="simespan"></param>
+        /// <returns></returns>
+        public static ResponseModel<string> UnlockMIT(string account)
+        {
+            var result = new ResponseModel<string>() { IsSuccess = false };
+            try
+            {
+                List<Object> lstPars = new List<object>();
+                lstPars.Add(account);
+                var sendT = m_Contract_Geth.GetFunction(Consts.M_ContractFunctions.M_Unlock);
+                var tranCode = sendT.SendTransactionAsync(ClsNethereum.M_DefultAccount, new HexBigInteger(1000000), new HexBigInteger(Web3.Convert.ToWei(0, Nethereum.Util.UnitConversion.EthUnit.Ether)), lstPars.ToArray()).Result;
+
+                result.IsSuccess = true;
+                result.Data = tranCode;
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
+            }
+            return result;
+        }
     }
 }

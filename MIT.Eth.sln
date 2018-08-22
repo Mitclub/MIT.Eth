@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.ETHNethereum", "MIT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.Tool", "MIT.eth.Tool\MIT.Eth.Tool.csproj", "{E640A601-D4C0-4A34-96A5-23030E73FEB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIT.Eth.UI.Utils", "MIT.Eth.UI.Utils\MIT.Eth.UI.Utils.csproj", "{4A2393EA-E23F-4A77-841B-82E83EAF3519}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E640A601-D4C0-4A34-96A5-23030E73FEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E640A601-D4C0-4A34-96A5-23030E73FEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E640A601-D4C0-4A34-96A5-23030E73FEB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2393EA-E23F-4A77-841B-82E83EAF3519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A2393EA-E23F-4A77-841B-82E83EAF3519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A2393EA-E23F-4A77-841B-82E83EAF3519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A2393EA-E23F-4A77-841B-82E83EAF3519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

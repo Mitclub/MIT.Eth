@@ -29,22 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.txtTo = new System.Windows.Forms.TextBox();
+            this.txtAccount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnLock = new System.Windows.Forms.Button();
             this.dtmLock = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // txtTo
+            // txtAccount
             // 
-            this.txtTo.Location = new System.Drawing.Point(95, 12);
-            this.txtTo.Name = "txtTo";
-            this.txtTo.Size = new System.Drawing.Size(543, 20);
-            this.txtTo.TabIndex = 9;
-            this.txtTo.Text = "0xb1928f80369c51f95ff0971d888da2a52243816d";
+            this.txtAccount.Location = new System.Drawing.Point(95, 12);
+            this.txtAccount.Name = "txtAccount";
+            this.txtAccount.Size = new System.Drawing.Size(543, 20);
+            this.txtAccount.TabIndex = 9;
+            this.txtAccount.Text = "0xb1928f80369c51f95ff0971d888da2a52243816d";
             // 
             // label4
             // 
@@ -98,22 +99,35 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Locking period:";
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(92, 131);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(95, 13);
+            this.lblError.TabIndex = 15;
+            this.lblError.Text = "[Amount] is invalid.";
+            this.lblError.Visible = false;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 264);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtmLock);
             this.Controls.Add(this.btnLock);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtTo);
+            this.Controls.Add(this.txtAccount);
             this.Controls.Add(this.label4);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.Text = "Tool";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,13 +135,14 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTo;
+        private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnLock;
         private System.Windows.Forms.DateTimePicker dtmLock;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

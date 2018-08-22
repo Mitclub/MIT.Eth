@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MIT.Eth.Common.Consts;
 
-namespace MIT.Eth.Wallet
+namespace MIT.Eth.UI.Utils
 {
     public partial class FrmMessage : Form
     {

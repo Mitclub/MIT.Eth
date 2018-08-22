@@ -1,6 +1,7 @@
 ﻿using MIT.Eth.Common;
 using MIT.Eth.ETHNethereum;
 using MIT.Eth.Model;
+using MIT.Eth.UI.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,6 @@ namespace MIT.Eth.Wallet
 
                 // start geth
                 ClsConsole.startGeth();
-                //System.Threading.Thread.Sleep(1000 * 10);
 
                 //bgwkUpdate.RunWorkerAsync();
                 timUpdate.Interval = 1000 * 30;
