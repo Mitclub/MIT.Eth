@@ -34,6 +34,11 @@ namespace MIT.Eth.Tool
 
         }
 
+        /// <summary>
+        /// lock MIT token
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLock_Click(object sender, EventArgs e)
         {
             try
@@ -73,6 +78,50 @@ namespace MIT.Eth.Tool
             {
                 ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
             }
+        }
+
+        /// <summary>
+        /// unlock MIT token
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUnlock_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblError.Visible = false;
+
+                if (string.IsNullOrWhiteSpace(txtAccount.Text.Trim()))
+                {
+                    lblError.Text = "[Amount] is invalid.";
+                    lblError.Visible = true;
+                    return;
+                }
+
+                var unLockResult = ClsNethereum.unLockAccount(this.txtPassword.Text.Trim());
+                if (unLockResult.IsSuccess == false)
+                {
+                    lblError.Text = unLockResult.Message;
+                    this.lblError.Visible = true;
+                    return;
+                }
+                
+                // lock Ether
+                var lockResult = ClsNethereum.UnlockMIT(txtAccount.Text.Trim());
+                if (lockResult.IsSuccess)
+                {
+                    new FrmMessage(M_MessageType.Success, lockResult.Data, false).ShowDialog();
+                }
+                else
+                {
+                    new FrmMessage(M_MessageType.Error, lockResult.Message, false).ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                ClsCommon.WriteLog(ex.ToString(), Consts.M_LogType.M_Error);
+            }
+
         }
     }
 }

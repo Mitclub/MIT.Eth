@@ -37,6 +37,7 @@
             this.dtmLock = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnUnlock = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtAccount
@@ -75,7 +76,7 @@
             // 
             // btnLock
             // 
-            this.btnLock.Location = new System.Drawing.Point(563, 220);
+            this.btnLock.Location = new System.Drawing.Point(14, 220);
             this.btnLock.Name = "btnLock";
             this.btnLock.Size = new System.Drawing.Size(75, 32);
             this.btnLock.TabIndex = 12;
@@ -110,12 +111,23 @@
             this.lblError.Text = "[Amount] is invalid.";
             this.lblError.Visible = false;
             // 
+            // btnUnlock
+            // 
+            this.btnUnlock.Location = new System.Drawing.Point(562, 220);
+            this.btnUnlock.Name = "btnUnlock";
+            this.btnUnlock.Size = new System.Drawing.Size(75, 32);
+            this.btnUnlock.TabIndex = 16;
+            this.btnUnlock.Text = "Unlock";
+            this.btnUnlock.UseVisualStyleBackColor = true;
+            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(649, 264);
+            this.Controls.Add(this.btnUnlock);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtmLock);
@@ -143,6 +155,7 @@
         private System.Windows.Forms.DateTimePicker dtmLock;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnUnlock;
     }
 }
 
