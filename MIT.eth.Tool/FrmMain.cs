@@ -45,8 +45,16 @@ namespace MIT.Eth.Tool
             {
                 lblError.Visible = false;
 
-                if (string.IsNullOrWhiteSpace(txtAccount.Text.Trim())){
+                if (string.IsNullOrWhiteSpace(txtAccount.Text.Trim()))
+                {
                     lblError.Text = "[Amount] is invalid.";
+                    lblError.Visible = true;
+                    return;
+                }
+
+                if (dtmLock.Value <= DateTime.Now)
+                {
+                    lblError.Text = "[Locking period] is invalid. It must be later than now.";
                     lblError.Visible = true;
                     return;
                 }
@@ -59,11 +67,11 @@ namespace MIT.Eth.Tool
                     return;
                 }
 
-                TimeSpan cha = (DateTime.Now - TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)));
+                TimeSpan cha = (dtmLock.Value - TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)));
                 Int32 t = (Int32)cha.TotalSeconds;
 
                 // lock Ether
-                var lockResult = ClsNethereum.LockMIT(txtAccount.Text.Trim(),t);
+                var lockResult = ClsNethereum.LockMIT(txtAccount.Text.Trim(), t);
 
                 if (lockResult.IsSuccess)
                 {
@@ -105,7 +113,7 @@ namespace MIT.Eth.Tool
                     this.lblError.Visible = true;
                     return;
                 }
-                
+
                 // lock Ether
                 var lockResult = ClsNethereum.UnlockMIT(txtAccount.Text.Trim());
                 if (lockResult.IsSuccess)
