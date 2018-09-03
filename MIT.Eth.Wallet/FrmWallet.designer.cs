@@ -46,6 +46,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoMIT = new System.Windows.Forms.RadioButton();
+            this.rdoEther = new System.Windows.Forms.RadioButton();
             this.btnSend = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.bgwkUpdate = new System.ComponentModel.BackgroundWorker();
@@ -64,15 +66,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.rdoMIT = new System.Windows.Forms.RadioButton();
-            this.rdoEther = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Location = new System.Drawing.Point(505, 19);
+            this.btnAddAccount.Location = new System.Drawing.Point(5, 30);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(62, 30);
             this.btnAddAccount.TabIndex = 4;
@@ -103,7 +103,7 @@
             // lblEtherName
             // 
             this.lblEtherName.AutoSize = true;
-            this.lblEtherName.Location = new System.Drawing.Point(301, 30);
+            this.lblEtherName.Location = new System.Drawing.Point(289, 80);
             this.lblEtherName.Name = "lblEtherName";
             this.lblEtherName.Size = new System.Drawing.Size(35, 13);
             this.lblEtherName.TabIndex = 5;
@@ -121,7 +121,7 @@
             // lblBalanceEther
             // 
             this.lblBalanceEther.AutoSize = true;
-            this.lblBalanceEther.Location = new System.Drawing.Point(343, 30);
+            this.lblBalanceEther.Location = new System.Drawing.Point(331, 80);
             this.lblBalanceEther.Name = "lblBalanceEther";
             this.lblBalanceEther.Size = new System.Drawing.Size(13, 13);
             this.lblBalanceEther.TabIndex = 5;
@@ -139,7 +139,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(416, 30);
+            this.label1.Location = new System.Drawing.Point(578, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 5;
@@ -148,7 +148,7 @@
             // lblLocked
             // 
             this.lblLocked.AutoSize = true;
-            this.lblLocked.Location = new System.Drawing.Point(469, 30);
+            this.lblLocked.Location = new System.Drawing.Point(631, 80);
             this.lblLocked.Name = "lblLocked";
             this.lblLocked.Size = new System.Drawing.Size(32, 13);
             this.lblLocked.TabIndex = 5;
@@ -193,7 +193,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 197);
+            this.label5.Location = new System.Drawing.Point(27, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 5;
@@ -201,7 +201,7 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(83, 194);
+            this.txtAmount.Location = new System.Drawing.Point(83, 281);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(573, 20);
             this.txtAmount.TabIndex = 7;
@@ -211,21 +211,40 @@
             // 
             this.groupBox1.Controls.Add(this.rdoMIT);
             this.groupBox1.Controls.Add(this.rdoEther);
-            this.groupBox1.Controls.Add(this.lblEtherName);
-            this.groupBox1.Controls.Add(this.lblBalanceEther);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblLocked);
-            this.groupBox1.Controls.Add(this.btnAddAccount);
-            this.groupBox1.Location = new System.Drawing.Point(32, 522);
+            this.groupBox1.Location = new System.Drawing.Point(83, 193);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(573, 69);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Visible = false;
             // 
+            // rdoMIT
+            // 
+            this.rdoMIT.Checked = true;
+            this.rdoMIT.Image = global::MIT.Eth.Wallet.Properties.Resources.logo50;
+            this.rdoMIT.Location = new System.Drawing.Point(6, 10);
+            this.rdoMIT.Name = "rdoMIT";
+            this.rdoMIT.Size = new System.Drawing.Size(94, 53);
+            this.rdoMIT.TabIndex = 8;
+            this.rdoMIT.TabStop = true;
+            this.rdoMIT.Text = "MIT";
+            this.rdoMIT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.rdoMIT.UseVisualStyleBackColor = true;
+            // 
+            // rdoEther
+            // 
+            this.rdoEther.Image = global::MIT.Eth.Wallet.Properties.Resources.ETH;
+            this.rdoEther.Location = new System.Drawing.Point(146, 10);
+            this.rdoEther.Name = "rdoEther";
+            this.rdoEther.Size = new System.Drawing.Size(82, 53);
+            this.rdoEther.TabIndex = 8;
+            this.rdoEther.Text = "ETH";
+            this.rdoEther.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.rdoEther.UseVisualStyleBackColor = true;
+            // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(581, 283);
+            this.btnSend.Location = new System.Drawing.Point(583, 398);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 32);
             this.btnSend.TabIndex = 11;
@@ -237,7 +256,7 @@
             // 
             this.lblError.AutoSize = true;
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(80, 217);
+            this.lblError.Location = new System.Drawing.Point(80, 304);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(95, 13);
             this.lblError.TabIndex = 5;
@@ -255,7 +274,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(83, 237);
+            this.txtPassword.Location = new System.Drawing.Point(83, 324);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(573, 20);
@@ -264,7 +283,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 240);
+            this.label6.Location = new System.Drawing.Point(17, 327);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 5;
@@ -273,7 +292,7 @@
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Location = new System.Drawing.Point(11, 346);
+            this.label7.Location = new System.Drawing.Point(13, 461);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(645, 1);
             this.label7.TabIndex = 12;
@@ -283,7 +302,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(10, 329);
+            this.label8.Location = new System.Drawing.Point(12, 444);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 17);
             this.label8.TabIndex = 13;
@@ -348,7 +367,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(44, 377);
+            this.label10.Location = new System.Drawing.Point(46, 492);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(23, 13);
             this.label10.TabIndex = 5;
@@ -357,7 +376,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(231, 377);
+            this.label11.Location = new System.Drawing.Point(233, 492);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 5;
@@ -366,48 +385,29 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(501, 377);
+            this.label12.Location = new System.Drawing.Point(503, 492);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 13);
             this.label12.TabIndex = 5;
             this.label12.Text = "Amount:";
-            // 
-            // rdoMIT
-            // 
-            this.rdoMIT.Checked = true;
-            this.rdoMIT.Image = global::MIT.Eth.Wallet.Properties.Resources.logo50;
-            this.rdoMIT.Location = new System.Drawing.Point(6, 10);
-            this.rdoMIT.Name = "rdoMIT";
-            this.rdoMIT.Size = new System.Drawing.Size(94, 53);
-            this.rdoMIT.TabIndex = 8;
-            this.rdoMIT.TabStop = true;
-            this.rdoMIT.Text = "MIT";
-            this.rdoMIT.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.rdoMIT.UseVisualStyleBackColor = true;
-            // 
-            // rdoEther
-            // 
-            this.rdoEther.Image = global::MIT.Eth.Wallet.Properties.Resources.ETH;
-            this.rdoEther.Location = new System.Drawing.Point(146, 10);
-            this.rdoEther.Name = "rdoEther";
-            this.rdoEther.Size = new System.Drawing.Size(82, 53);
-            this.rdoEther.TabIndex = 8;
-            this.rdoEther.Text = "ETH";
-            this.rdoEther.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.rdoEther.UseVisualStyleBackColor = true;
             // 
             // FrmWallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(670, 624);
+            this.ClientSize = new System.Drawing.Size(670, 443);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblEtherName);
+            this.Controls.Add(this.lblBalanceEther);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblLocked);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.btnAddAccount);
             this.Controls.Add(this.txtTo);
             this.Controls.Add(this.btnCopyAccount);
             this.Controls.Add(this.label9);
@@ -433,7 +433,6 @@
             this.Text = "MIT - Wallet";
             this.Load += new System.EventHandler(this.FrmCommand_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
