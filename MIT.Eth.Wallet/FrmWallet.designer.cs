@@ -216,7 +216,6 @@
             this.groupBox1.Size = new System.Drawing.Size(573, 69);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Visible = false;
             // 
             // rdoMIT
             // 
